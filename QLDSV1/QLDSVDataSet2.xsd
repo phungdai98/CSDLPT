@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLDSVDataSet2" targetNamespace="http://tempuri.org/QLDSVDataSet2.xsd" xmlns:mstns="http://tempuri.org/QLDSVDataSet2.xsd" xmlns="http://tempuri.org/QLDSVDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLDSVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLDSVConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLDSV1.Properties.Settings.GlobalReference.Default.QLDSVConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DSLOPTableAdapter" GeneratorDataComponentClassName="DSLOPTableAdapter" Name="DSLOP" UserDataComponentName="DSLOPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.DSLOP" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MALOP FROM dbo.DSLOP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MALOP" DataSetColumn="MALOP" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLDSVDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLDSVDataSet2" msprop:Generator_UserDSName="QLDSVDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSLOP" msprop:Generator_TableClassName="DSLOPDataTable" msprop:Generator_TableVarName="tableDSLOP" msprop:Generator_TablePropName="DSLOP" msprop:Generator_RowDeletingName="DSLOPRowDeleting" msprop:Generator_RowChangingName="DSLOPRowChanging" msprop:Generator_RowEvHandlerName="DSLOPRowChangeEventHandler" msprop:Generator_RowDeletedName="DSLOPRowDeleted" msprop:Generator_UserTableName="DSLOP" msprop:Generator_RowChangedName="DSLOPRowChanged" msprop:Generator_RowEvArgName="DSLOPRowChangeEvent" msprop:Generator_RowClassName="DSLOPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MALOP" msprop:Generator_ColumnVarNameInTable="columnMALOP" msprop:Generator_ColumnPropNameInRow="MALOP" msprop:Generator_ColumnPropNameInTable="MALOPColumn" msprop:Generator_UserColumnName="MALOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DSLOP" />
+      <xs:field xpath="mstns:MALOP" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
