@@ -129,6 +129,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSVDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLDSVDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSVDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +246,28 @@
     </None>
     <None Include="QLDSVDataSet4.xss">
       <DependentUpon>QLDSVDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVDataSet5.xsc">
+      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSVDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSVDataSet5.xss">
+      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVDataSet6.xsc">
+      <DependentUpon>QLDSVDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSVDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSVDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSVDataSet6.xss">
+      <DependentUpon>QLDSVDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

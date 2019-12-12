@@ -40,7 +40,7 @@ namespace QLDSV1
 
         private void DiemSinhVien_Load(object sender, EventArgs e)
         {
-
+            btnSave.Enabled = false;
         }
 
         private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -73,6 +73,7 @@ namespace QLDSV1
 
                 }
                 MessageBox.Show("Lưu lại thành công");
+                btnSave.Enabled = false;
             }
             catch (Exception)
             {
@@ -85,7 +86,30 @@ namespace QLDSV1
 
         private void SimpleButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nhấn lưu lại để lưu");
+            //MessageBox.Show("Nhấn lưu lại để lưu");
+            //btnSave.Enabled = true;
+            int dem = 0;
+            for (int i = 0; i < Program.demrow; i++)
+            {
+                int index = -1;
+                index = i;
+                BeanDiemSV dsv = new BeanDiemSV();
+                
+                string string_diem = gridView1.GetRowCellValue(index, "DIEM").ToString();
+                double diem = Convert.ToDouble(string_diem);
+                if (diem < 0|| diem>10)
+                {
+                    MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại");
+                    btnSave.Enabled = false;
+                    break;
+                }
+                else dem++;
+
+            }
+            if(dem== Program.demrow)
+            {
+                btnSave.Enabled = true;
+            }
         }
     }
 }

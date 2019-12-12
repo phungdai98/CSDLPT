@@ -15,6 +15,7 @@ namespace QLDSV1
     public partial class SinhVien : DevExpress.XtraEditors.XtraForm
     {
         SinhVienDAL dal;
+        LopBLL lobll;
         String temp1 = "";
         String temp2 = "";
         String temp3 = "";
@@ -30,12 +31,18 @@ namespace QLDSV1
         {
             InitializeComponent();
             dal = new SinhVienDAL();
+            lobll = new LopBLL();
         }
         public void ShowSinhVien()
         {
-            DataTable dt = dal.getSinhVien();
+            DataTable dt = dal.getSinhVien(Program.maLopSub);
             tablesv.DataSource = dt;
             
+        }
+        public void ShowAllLop()
+        {
+            DataTable dt = lobll.getAllLop();
+            dataGridView1.DataSource = dt;
         }
         public bool CheckData()
         {
@@ -49,6 +56,8 @@ namespace QLDSV1
         }
         private void SinhVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSet5.DSNHAPSV' table. You can move, or remove it, as needed.
+            this.dSNHAPSVTableAdapter.Fill(this.qLDSVDataSet5.DSNHAPSV);
             // TODO: This line of code loads data into the 'qLDSVDataSet4.DSLOP' table. You can move, or remove it, as needed.
 
             // TODO: This line of code loads data into the 'qLDSVDataSet3.DSLOP' table. You can move, or remove it, as needed.
@@ -60,18 +69,20 @@ namespace QLDSV1
             //{
             //    this.dSLOPTableAdapter1.Fill(this.qLDSVDataSet3.DSLOP);
             //}
-           
+
             // TODO: This line of code loads data into the 'qLDSVDataSet2.DSLOP' table. You can move, or remove it, as needed.
             this.dSLOPTableAdapter.Fill(this.qLDSVDataSet2.DSLOP);
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
             int index = 0;
+            ShowAllLop();
+            Program.maLopSub = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
             ShowSinhVien();
             txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
             txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
             txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-            txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
-
+            //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+            txtmalop.Text= dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
             if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
             {
                 txtphai.SelectedIndex = 0;
@@ -103,7 +114,7 @@ namespace QLDSV1
                 btnxoa.Enabled = false;
                 btnphuchoi.Enabled = false;
             }
-
+            txtmalop.Enabled = false;
             //String sodong ="Số dòng là" +Program.demrow;
             //MessageBox.Show(sodong);
         }
@@ -151,7 +162,7 @@ namespace QLDSV1
                 txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
                 txtho.Text= gridView1.GetRowCellValue(index, "HO").ToString();
                 txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-                txtmalop.Text= gridView1.GetRowCellValue(index, "MALOP").ToString();
+                //txtmalop.Text= gridView1.GetRowCellValue(index, "MALOP").ToString();
                 
                 if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
                 {
@@ -184,24 +195,33 @@ namespace QLDSV1
                  temp8 = gridView1.GetRowCellValue(index, "DIACHI").ToString();
                  temp9 = gridView1.GetRowCellValue(index, "GHICHU").ToString();
                  temp10 = gridView1.GetRowCellValue(index, "NGHIHOC").ToString();
+                if(dal.CheckMaSVinDiem(gridView1.GetRowCellValue(index, "MASV").ToString())>0)
+                {
+                    btnxoa.Enabled = false;
+                }
+                else
+                {
+                    btnxoa.Enabled = true;
+                }
             }
         }
 
         private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //txtmalop.Enabled = true;
             txtmasv.Text = "";
             txtho.Text = "";
             txtten.Text = "";
-            txtmalop.Text ="";
+            //txtmalop.Text ="";
 
             
-            txtphai.SelectedIndex = -1;
+            txtphai.SelectedIndex = 0;
             txtdate.Text = "";
             txtnoisinh.Text = "";
             txtdiachi.Text = "";
             txtghichu.Text = "";
            
-           txtnghihoc.SelectedIndex = -1;           
+           txtnghihoc.SelectedIndex = 0;           
         }
 
         private void BarButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -284,11 +304,13 @@ namespace QLDSV1
                     //Program.KetNoi();
                     dal = new SinhVienDAL();
                     ShowSinhVien();
+                    lobll = new LopBLL();
+                    ShowAllLop();
 
                     txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
                     txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
                     txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-                    txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+                    //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
 
                     if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
                     {
@@ -384,6 +406,18 @@ namespace QLDSV1
             }
             list.Clear();
             
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            int index1 = 0;
+            if (index >= 0)
+            {
+                txtmalop.Text= dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
+                Program.maLopSub = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
+                ShowSinhVien();
+            }
         }
     }
 }

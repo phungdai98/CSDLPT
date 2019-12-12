@@ -29,9 +29,20 @@ namespace QLDSV1
             con.Close();
             return dt.Rows.Count;
         }
-        public DataTable getSinhVien()
+        public int CheckMaSVinDiem(string masv)
         {
-            string sql = "SELECT MASV,HO,TEN,MALOP,PHAI,NGAYSINH,NOISINH,DIACHI,GHICHU,NGHIHOC FROM SINHVIEN";
+            string sql= "SELECT * FROM DIEM WHERE MASV=" + "'" + masv + "'";
+            SqlConnection con = dc.getConnect();
+            da = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt.Rows.Count;
+        }
+        public DataTable getSinhVien(String malop)
+        {
+            string sql = "SELECT MASV,HO,TEN,MALOP,PHAI,NGAYSINH,NOISINH,DIACHI,GHICHU,NGHIHOC FROM SINHVIEN WHERE MALOP='"+malop+"'";
             //B2:Tạo 1 connect đến sql
             SqlConnection con = dc.getConnect();
             //B3 :Khoi tao lop SqlDataAdapter

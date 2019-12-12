@@ -41,6 +41,7 @@
             this.btnsua = new DevExpress.XtraBars.BarButtonItem();
             this.btninsert = new DevExpress.XtraBars.BarButtonItem();
             this.btnphuchoi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -85,7 +86,10 @@
             this.dSLOPTableAdapter = new QLDSV1.QLDSVDataSet2TableAdapters.DSLOPTableAdapter();
             this.dSLOPTableAdapter1 = new QLDSV1.QLDSVDataSet3TableAdapters.DSLOPTableAdapter();
             this.dSLOPTableAdapter2 = new QLDSV1.QLDSVDataSet4TableAdapters.DSLOPTableAdapter();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.dSNHAPSVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet5 = new QLDSV1.QLDSVDataSet5();
+            this.dSNHAPSVTableAdapter = new QLDSV1.QLDSVDataSet5TableAdapters.DSNHAPSVTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablesv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -116,6 +120,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNHAPSVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablesv
@@ -124,7 +131,7 @@
             this.tablesv.Location = new System.Drawing.Point(0, 53);
             this.tablesv.MainView = this.gridView1;
             this.tablesv.Name = "tablesv";
-            this.tablesv.Size = new System.Drawing.Size(1050, 253);
+            this.tablesv.Size = new System.Drawing.Size(1307, 212);
             this.tablesv.TabIndex = 0;
             this.tablesv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -245,6 +252,14 @@
             this.btnphuchoi.Name = "btnphuchoi";
             this.btnphuchoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnphuchoi_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Phuc hồi";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem1_ItemClick_1);
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -263,7 +278,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1050, 53);
+            this.barDockControlTop.Size = new System.Drawing.Size(1307, 53);
             // 
             // barDockControlBottom
             // 
@@ -271,7 +286,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1050, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1307, 23);
             // 
             // barDockControlLeft
             // 
@@ -285,7 +300,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1050, 53);
+            this.barDockControlRight.Location = new System.Drawing.Point(1307, 53);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
             // 
@@ -293,7 +308,7 @@
             // 
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl1.Location = new System.Drawing.Point(12, 358);
+            this.labelControl1.Location = new System.Drawing.Point(12, 285);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 6;
@@ -301,7 +316,7 @@
             // 
             // txtmasv
             // 
-            this.txtmasv.Location = new System.Drawing.Point(119, 355);
+            this.txtmasv.Location = new System.Drawing.Point(91, 282);
             this.txtmasv.MenuManager = this.barManager1;
             this.txtmasv.Name = "txtmasv";
             this.txtmasv.Size = new System.Drawing.Size(120, 20);
@@ -311,7 +326,7 @@
             // 
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl2.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl2.Location = new System.Drawing.Point(12, 398);
+            this.labelControl2.Location = new System.Drawing.Point(12, 325);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
             this.labelControl2.TabIndex = 8;
@@ -319,7 +334,7 @@
             // 
             // txtho
             // 
-            this.txtho.Location = new System.Drawing.Point(119, 395);
+            this.txtho.Location = new System.Drawing.Point(91, 322);
             this.txtho.MenuManager = this.barManager1;
             this.txtho.Name = "txtho";
             this.txtho.Size = new System.Drawing.Size(120, 20);
@@ -327,7 +342,7 @@
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(119, 435);
+            this.txtten.Location = new System.Drawing.Point(91, 355);
             this.txtten.MenuManager = this.barManager1;
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(120, 20);
@@ -335,7 +350,7 @@
             // 
             // txtnoisinh
             // 
-            this.txtnoisinh.Location = new System.Drawing.Point(654, 351);
+            this.txtnoisinh.Location = new System.Drawing.Point(335, 359);
             this.txtnoisinh.MenuManager = this.barManager1;
             this.txtnoisinh.Name = "txtnoisinh";
             this.txtnoisinh.Size = new System.Drawing.Size(120, 20);
@@ -343,7 +358,7 @@
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(654, 391);
+            this.txtdiachi.Location = new System.Drawing.Point(335, 400);
             this.txtdiachi.MenuManager = this.barManager1;
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(120, 20);
@@ -351,7 +366,7 @@
             // 
             // txtghichu
             // 
-            this.txtghichu.Location = new System.Drawing.Point(654, 435);
+            this.txtghichu.Location = new System.Drawing.Point(335, 435);
             this.txtghichu.MenuManager = this.barManager1;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(120, 20);
@@ -361,7 +376,7 @@
             // 
             this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl3.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl3.Location = new System.Drawing.Point(12, 442);
+            this.labelControl3.Location = new System.Drawing.Point(12, 358);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(18, 13);
             this.labelControl3.TabIndex = 18;
@@ -371,7 +386,7 @@
             // 
             this.labelControl4.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl4.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl4.Location = new System.Drawing.Point(341, 358);
+            this.labelControl4.Location = new System.Drawing.Point(12, 442);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(31, 13);
             this.labelControl4.TabIndex = 19;
@@ -381,7 +396,7 @@
             // 
             this.labelControl5.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl5.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl5.Location = new System.Drawing.Point(341, 398);
+            this.labelControl5.Location = new System.Drawing.Point(263, 289);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(20, 13);
             this.labelControl5.TabIndex = 20;
@@ -391,7 +406,7 @@
             // 
             this.labelControl6.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl6.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl6.Location = new System.Drawing.Point(341, 442);
+            this.labelControl6.Location = new System.Drawing.Point(263, 329);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(47, 13);
             this.labelControl6.TabIndex = 21;
@@ -401,7 +416,7 @@
             // 
             this.labelControl7.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl7.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl7.Location = new System.Drawing.Point(600, 358);
+            this.labelControl7.Location = new System.Drawing.Point(263, 362);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 22;
@@ -411,7 +426,7 @@
             // 
             this.labelControl8.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl8.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl8.Location = new System.Drawing.Point(600, 394);
+            this.labelControl8.Location = new System.Drawing.Point(263, 403);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(32, 13);
             this.labelControl8.TabIndex = 23;
@@ -421,7 +436,7 @@
             // 
             this.labelControl9.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl9.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl9.Location = new System.Drawing.Point(600, 442);
+            this.labelControl9.Location = new System.Drawing.Point(263, 442);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(35, 13);
             this.labelControl9.TabIndex = 24;
@@ -431,7 +446,7 @@
             // 
             this.labelControl10.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl10.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl10.Location = new System.Drawing.Point(835, 354);
+            this.labelControl10.Location = new System.Drawing.Point(12, 403);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(41, 13);
             this.labelControl10.TabIndex = 25;
@@ -440,7 +455,7 @@
             // txtdate
             // 
             this.txtdate.EditValue = null;
-            this.txtdate.Location = new System.Drawing.Point(402, 435);
+            this.txtdate.Location = new System.Drawing.Point(335, 326);
             this.txtdate.MenuManager = this.barManager1;
             this.txtdate.Name = "txtdate";
             this.txtdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -458,7 +473,7 @@
             // 
             // txtphai
             // 
-            this.txtphai.Location = new System.Drawing.Point(402, 395);
+            this.txtphai.Location = new System.Drawing.Point(335, 289);
             this.txtphai.MenuManager = this.barManager1;
             this.txtphai.Name = "txtphai";
             this.txtphai.Properties.Columns = 2;
@@ -470,7 +485,7 @@
             // 
             // txtnghihoc
             // 
-            this.txtnghihoc.Location = new System.Drawing.Point(886, 351);
+            this.txtnghihoc.Location = new System.Drawing.Point(91, 396);
             this.txtnghihoc.MenuManager = this.barManager1;
             this.txtnghihoc.Name = "txtnghihoc";
             this.txtnghihoc.Properties.Columns = 2;
@@ -508,7 +523,7 @@
             // 
             // txtmalop
             // 
-            this.txtmalop.Location = new System.Drawing.Point(402, 355);
+            this.txtmalop.Location = new System.Drawing.Point(91, 439);
             this.txtmalop.MenuManager = this.barManager1;
             this.txtmalop.Name = "txtmalop";
             this.txtmalop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -587,19 +602,35 @@
             // 
             this.dSLOPTableAdapter2.ClearBeforeFill = true;
             // 
-            // barButtonItem1
+            // dSNHAPSVBindingSource
             // 
-            this.barButtonItem1.Caption = "Phuc hồi";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem1_ItemClick_1);
+            this.dSNHAPSVBindingSource.DataMember = "DSNHAPSV";
+            this.dSNHAPSVBindingSource.DataSource = this.qLDSVDataSet5;
+            // 
+            // qLDSVDataSet5
+            // 
+            this.qLDSVDataSet5.DataSetName = "QLDSVDataSet5";
+            this.qLDSVDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dSNHAPSVTableAdapter
+            // 
+            this.dSNHAPSVTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(603, 289);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(342, 170);
+            this.dataGridView1.TabIndex = 45;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // SinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 514);
+            this.ClientSize = new System.Drawing.Size(1307, 514);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmb2);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
@@ -661,6 +692,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSNHAPSVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +758,9 @@
         private System.Windows.Forms.BindingSource dSLOPBindingSource4;
         private System.Windows.Forms.BindingSource dSLOPBindingSource5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private QLDSVDataSet5 qLDSVDataSet5;
+        private System.Windows.Forms.BindingSource dSNHAPSVBindingSource;
+        private QLDSVDataSet5TableAdapters.DSNHAPSVTableAdapter dSNHAPSVTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
