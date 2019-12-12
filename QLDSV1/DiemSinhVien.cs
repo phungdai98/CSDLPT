@@ -99,7 +99,7 @@ namespace QLDSV1
                 double diem = Convert.ToDouble(string_diem);
                 if (diem < 0|| diem>10)
                 {
-                    MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại");
+                    MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại trước khi lưu");
                     btnSave.Enabled = false;
                     break;
                 }
