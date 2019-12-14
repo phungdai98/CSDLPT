@@ -30,6 +30,17 @@ namespace QLDSV1
             con.Close();
             return dt;
         }
+        public int checkDiemSV(string masv, string mamh, int lanthi)
+        {
+            string sql = "SELECT * FROM DIEM WHERE MASV=" + "'" + masv + "'" + " " + "AND MAMH=" + "'" + mamh + "'" + " " + "AND LAN=" + lanthi;
+            SqlConnection con = dc.getConnect();
+            da = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt.Rows.Count;
+        }
         public void InsertDiem(BeanDiemSV dsv)
         {
             string sql = "INSERT INTO DIEM(MASV,MAMH,LAN,DIEM) VALUES(@MASV,@MAMH,@LAN,@DIEM)";

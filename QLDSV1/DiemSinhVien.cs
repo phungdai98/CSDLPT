@@ -89,11 +89,17 @@ namespace QLDSV1
             //MessageBox.Show("Nhấn lưu lại để lưu");
             //btnSave.Enabled = true;
             int dem = 0;
+            
+            string mamh = txtmonhoc.Text;
+            int lanthi = int.Parse(txtlanthi.Text);
+            string notice = "Các sinh viên đã có điểm môn" +mamh+" lần" +lanthi;
             for (int i = 0; i < Program.demrow; i++)
             {
                 int index = -1;
                 index = i;
                 BeanDiemSV dsv = new BeanDiemSV();
+                string masv = gridView1.GetRowCellValue(index, "MASV").ToString();
+
                 
                 string string_diem = gridView1.GetRowCellValue(index, "DIEM").ToString();
                 if(string.IsNullOrEmpty(string_diem))
@@ -105,19 +111,33 @@ namespace QLDSV1
                 else
                 {
                     double diem = Convert.ToDouble(string_diem);
-                    if (diem < 0 || diem > 10 || diem == null)
+                    if (diem < 0 || diem > 10)
                     {
                         MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại trước khi lưu");
                         btnSave.Enabled = false;
                         break;
                     }
-                    else dem++;
+                    else
+                    {
+                        dem++;
+                        if(dal.checkDiemSV(masv,mamh,lanthi)>0)
+                        {
+                            notice += masv + ","; 
+                        }
+                        else
+                        {
+                            notice = "hop lệ";
+                        }
+                    }
+
+                    
                 }
                 
 
             }
             if(dem== Program.demrow)
             {
+                MessageBox.Show(notice);
                 btnSave.Enabled = true;
             }
         }
