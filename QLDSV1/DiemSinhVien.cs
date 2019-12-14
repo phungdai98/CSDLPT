@@ -96,14 +96,24 @@ namespace QLDSV1
                 BeanDiemSV dsv = new BeanDiemSV();
                 
                 string string_diem = gridView1.GetRowCellValue(index, "DIEM").ToString();
-                double diem = Convert.ToDouble(string_diem);
-                if (diem < 0|| diem>10)
+                if(string.IsNullOrEmpty(string_diem))
                 {
-                    MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại trước khi lưu");
+                    MessageBox.Show("Vui lòng nhập giá trị");
                     btnSave.Enabled = false;
                     break;
                 }
-                else dem++;
+                else
+                {
+                    double diem = Convert.ToDouble(string_diem);
+                    if (diem < 0 || diem > 10 || diem == null)
+                    {
+                        MessageBox.Show("Bạn nhập giá trị điểm không hợp lệ vui lòng kiểm tra lại trước khi lưu");
+                        btnSave.Enabled = false;
+                        break;
+                    }
+                    else dem++;
+                }
+                
 
             }
             if(dem== Program.demrow)
