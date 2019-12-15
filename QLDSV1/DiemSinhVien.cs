@@ -78,6 +78,7 @@ namespace QLDSV1
                         {
                             dsv.LANTHI = int.Parse(txtlanthi.Text)+1;
                             dal.InsertDiem(dsv);
+                            MessageBox.Show("Lưu lại thành công");
                         }
                         if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
                         {
@@ -87,12 +88,33 @@ namespace QLDSV1
                         {
                             dsv.LANTHI = int.Parse(txtlanthi.Text);
                             dal.InsertDiem(dsv);
+                            MessageBox.Show("Lưu lại thành công");
                         }
+                    }
+                    if(lanthi==2)
+                    {
+                        if (dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) == 0)
+                        {
+                            dsv.LANTHI = int.Parse(txtlanthi.Text);
+                            dal.InsertDiem(dsv);
+                            MessageBox.Show("Lưu lại thành công");
+                        }
+                        if (dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
+                        {
+                            MessageBox.Show("Không thể lưu sinh viên này" + dsv.MASV);
+                        }
+                        if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) == 0)
+                        {
+                            dsv.LANTHI = int.Parse(txtlanthi.Text)-1;
+                            dal.InsertDiem(dsv);
+                            MessageBox.Show("Lưu lại thành công");
+                        }
+
                     }
                     
 
                 }
-                MessageBox.Show("Lưu lại thành công");
+                
                 btnSave.Enabled = false;
             }
             catch (Exception)
@@ -114,7 +136,7 @@ namespace QLDSV1
             int lanthi = int.Parse(txtlanthi.Text);
             string notice = "Các sinh viên đã có điểm môn " +mamh+" lần " +lanthi +" nếu lưu lại điểm tự động chuyển lần 2";
             string notice1 = "Các sinh viên đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này";
-            
+            string notice2 = "Các sinh viên sau chưa có điểm lần 1 nếu lưu lại sẽ tự cập nhập lần 1 : ";
             for (int i = 0; i < Program.demrow; i++)
             {
                 int index = -1;
@@ -141,20 +163,38 @@ namespace QLDSV1
                     }
                     else
                     {
-                        dem++;
-                        if(dal.checkDiemSV(masv,mamh,1)> 0 && dal.checkDiemSV(masv, mamh, 2)==0)
+                        if(lanthi==1)
                         {
-                            notice += masv + ","; 
+                            dem++;
+                            if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) == 0)
+                            {
+                                notice += masv + ",";
+                            }
+                            if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
+                            {
+                                notice1 += masv + " " + ";";
+                                notice = notice1;
+                            }
+                            else
+                            {
+                                notice = "hop lệ";
+                            }
                         }
-                        if(dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
+                        if(lanthi==2)
                         {
-                            notice1 +=masv+" "+";";
-                            notice = notice1;
+                            dem++;
+                            if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
+                            {
+                                notice1 += masv + " " + ";";
+                                notice = notice1;
+                            }
+                            if (dal.checkDiemSV(masv, mamh, 1)==0)
+                            {
+                                notice2 += masv + " " + ";";
+                                notice = notice2;
+                            }
                         }
-                        else
-                        {
-                            notice = "hop lệ";
-                        }
+                        
                     }
 
                     
