@@ -190,12 +190,12 @@ namespace QLDSV1
                             if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
                             {
                                 notice1 += masv + " " + ";";
-                                notice = notice1;
+                                //notice = notice1;
                             }
                             else if (dal.checkDiemSV(masv, mamh, 1)==0)
                             {
                                 notice2 += masv + " " + ";";
-                                notice = notice2;
+                                
                             }
                         }
                         
@@ -208,7 +208,9 @@ namespace QLDSV1
             }
             if(dem== Program.demrow)
             {
-                MessageBox.Show(notice+" "+notice3);
+                if(lanthi==1) MessageBox.Show(notice1 + " " + notice3);
+                else if(lanthi==2) MessageBox.Show(notice1 + " " + notice2);
+
                 btnSave.Enabled = true;
             }
         }
