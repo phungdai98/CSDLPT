@@ -49,12 +49,18 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbDiem = new System.Windows.Forms.ComboBox();
+            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
+            this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -109,8 +115,8 @@
             // 
             this.btnSave.Caption = "Lưu lại";
             this.btnSave.Id = 1;
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
             // 
@@ -235,11 +241,38 @@
             this.simpleButton1.Text = "Kết thuc";
             this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
+            // cmbDiem
+            // 
+            this.cmbDiem.DataSource = this.vDSPHANMANH2BindingSource;
+            this.cmbDiem.DisplayMember = "TENCN";
+            this.cmbDiem.FormattingEnabled = true;
+            this.cmbDiem.Location = new System.Drawing.Point(1070, 28);
+            this.cmbDiem.Name = "cmbDiem";
+            this.cmbDiem.Size = new System.Drawing.Size(121, 21);
+            this.cmbDiem.TabIndex = 20;
+            this.cmbDiem.ValueMember = "TENSERVER";
+            this.cmbDiem.SelectedIndexChanged += new System.EventHandler(this.CmbDiem_SelectedIndexChanged);
+            // 
+            // qLDSVDataSet1
+            // 
+            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
+            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vDSPHANMANH2BindingSource
+            // 
+            this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
+            this.vDSPHANMANH2BindingSource.DataSource = this.qLDSVDataSet1;
+            // 
+            // v_DS_PHANMANH2TableAdapter
+            // 
+            this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
+            // 
             // DiemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 507);
+            this.Controls.Add(this.cmbDiem);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -262,6 +295,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +323,9 @@
         private DevExpress.XtraEditors.TextEdit txtlop;
         private DevExpress.XtraBars.BarButtonItem btnSave;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.ComboBox cmbDiem;
+        private QLDSVDataSet1 qLDSVDataSet1;
+        private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
+        private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
     }
 }

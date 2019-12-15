@@ -41,7 +41,11 @@ namespace QLDSV1
 
         private void DiemSinhVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
             btnSave.Enabled = false;
+            cmbDiem.SelectedIndex = -1;
+            cmbDiem.SelectedIndex = Program.temp;
         }
 
         private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -61,6 +65,7 @@ namespace QLDSV1
             try
             {
                 int lanthi=int.Parse(txtlanthi.Text);
+                
                 for (int i = 0; i < Program.demrow; i++)
                 {
     
@@ -70,7 +75,7 @@ namespace QLDSV1
                     dsv.MASV = gridView1.GetRowCellValue(index, "MASV").ToString();
 
                     dsv.MAMH = txtmonhoc.Text;
-                    //dsv.LANTHI = int.Parse(txtlanthi.Text);
+
                     dsv.DIEM = gridView1.GetRowCellValue(index, "DIEM").ToString();
                     if (lanthi == 1)
                     {
@@ -80,7 +85,7 @@ namespace QLDSV1
                             dal.InsertDiem(dsv);
                             MessageBox.Show("Lưu lại thành công");
                         }
-                        if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
+                        else if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
                         {
                             MessageBox.Show("Không thể lưu sinh viên này"+dsv.MASV);
                         }
@@ -99,11 +104,11 @@ namespace QLDSV1
                             dal.InsertDiem(dsv);
                             MessageBox.Show("Lưu lại thành công");
                         }
-                        if (dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
+                        else if (dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) > 0 && dal.checkDiemSV(dsv.MASV, dsv.MAMH, 2) > 0)
                         {
                             MessageBox.Show("Không thể lưu sinh viên này" + dsv.MASV);
                         }
-                        if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) == 0)
+                        else if(dal.checkDiemSV(dsv.MASV, dsv.MAMH, 1) == 0)
                         {
                             dsv.LANTHI = int.Parse(txtlanthi.Text)-1;
                             dal.InsertDiem(dsv);
@@ -134,7 +139,8 @@ namespace QLDSV1
             
             string mamh = txtmonhoc.Text;
             int lanthi = int.Parse(txtlanthi.Text);
-            string notice = "Các sinh viên đã có điểm môn " +mamh+" lần " +lanthi +" nếu lưu lại điểm tự động chuyển lần 2";
+            string notice = "";
+            string notice3 = "Các sinh viên đã có điểm môn " +mamh+" lần " + 1 +" nếu lưu lại điểm tự động chuyển lần 2  : ";
             string notice1 = "Các sinh viên đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này";
             string notice2 = "Các sinh viên sau chưa có điểm lần 1 nếu lưu lại sẽ tự cập nhập lần 1 : ";
             for (int i = 0; i < Program.demrow; i++)
@@ -168,17 +174,15 @@ namespace QLDSV1
                             dem++;
                             if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) == 0)
                             {
-                                notice += masv + ",";
+                                notice3 += masv + ",";
+                                //notice = notice3;
                             }
-                            if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
+                            else if (dal.checkDiemSV(masv, mamh, 1) > 0 && dal.checkDiemSV(masv, mamh, 2) > 0)
                             {
                                 notice1 += masv + " " + ";";
-                                notice = notice1;
+                                
                             }
-                            else
-                            {
-                                notice = "hop lệ";
-                            }
+                            
                         }
                         if(lanthi==2)
                         {
@@ -188,7 +192,7 @@ namespace QLDSV1
                                 notice1 += masv + " " + ";";
                                 notice = notice1;
                             }
-                            if (dal.checkDiemSV(masv, mamh, 1)==0)
+                            else if (dal.checkDiemSV(masv, mamh, 1)==0)
                             {
                                 notice2 += masv + " " + ";";
                                 notice = notice2;
@@ -204,8 +208,29 @@ namespace QLDSV1
             }
             if(dem== Program.demrow)
             {
-                MessageBox.Show(notice);
+                MessageBox.Show(notice+" "+notice3);
                 btnSave.Enabled = true;
+            }
+        }
+
+        private void CmbDiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Program.mGroup.Equals("PGV"))
+            {
+                try
+                {
+                    Program.servername = cmbDiem.SelectedValue.ToString();
+                    Program.mlogin = Program.remotelogin;
+                    Program.password = Program.remotepassword;
+                    DataConnection dc = new DataConnection();
+                    //MessageBox.Show(Program.servername);
+                    dal = new DiemSinhVienDAL();
+                }
+                catch (Exception)
+                {
+
+
+                }
             }
         }
     }
