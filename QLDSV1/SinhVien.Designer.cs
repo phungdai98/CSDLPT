@@ -128,10 +128,12 @@
             // tablesv
             // 
             this.tablesv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tablesv.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablesv.Location = new System.Drawing.Point(0, 53);
             this.tablesv.MainView = this.gridView1;
+            this.tablesv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablesv.Name = "tablesv";
-            this.tablesv.Size = new System.Drawing.Size(1307, 212);
+            this.tablesv.Size = new System.Drawing.Size(1032, 212);
             this.tablesv.TabIndex = 0;
             this.tablesv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -139,13 +141,15 @@
             // 
             // gridView1
             // 
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.tablesv;
             this.gridView1.Name = "gridView1";
             // 
             // textEdit1
             // 
             this.textEdit1.EditValue = null;
-            this.textEdit1.Location = new System.Drawing.Point(826, 355);
+            this.textEdit1.Location = new System.Drawing.Point(825, 355);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -278,15 +282,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1307, 53);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1032, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 490);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1307, 23);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 23);
             // 
             // barDockControlLeft
             // 
@@ -294,21 +300,24 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 438);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 437);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1307, 53);
+            this.barDockControlRight.Location = new System.Drawing.Point(1032, 53);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 437);
             // 
             // labelControl1
             // 
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl1.Location = new System.Drawing.Point(12, 285);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 6;
@@ -317,6 +326,7 @@
             // txtmasv
             // 
             this.txtmasv.Location = new System.Drawing.Point(91, 282);
+            this.txtmasv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtmasv.MenuManager = this.barManager1;
             this.txtmasv.Name = "txtmasv";
             this.txtmasv.Size = new System.Drawing.Size(120, 20);
@@ -327,6 +337,7 @@
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl2.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl2.Location = new System.Drawing.Point(12, 325);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
             this.labelControl2.TabIndex = 8;
@@ -334,7 +345,8 @@
             // 
             // txtho
             // 
-            this.txtho.Location = new System.Drawing.Point(91, 322);
+            this.txtho.Location = new System.Drawing.Point(91, 321);
+            this.txtho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtho.MenuManager = this.barManager1;
             this.txtho.Name = "txtho";
             this.txtho.Size = new System.Drawing.Size(120, 20);
@@ -343,6 +355,7 @@
             // txtten
             // 
             this.txtten.Location = new System.Drawing.Point(91, 355);
+            this.txtten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtten.MenuManager = this.barManager1;
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(120, 20);
@@ -350,7 +363,8 @@
             // 
             // txtnoisinh
             // 
-            this.txtnoisinh.Location = new System.Drawing.Point(335, 359);
+            this.txtnoisinh.Location = new System.Drawing.Point(335, 358);
+            this.txtnoisinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnoisinh.MenuManager = this.barManager1;
             this.txtnoisinh.Name = "txtnoisinh";
             this.txtnoisinh.Size = new System.Drawing.Size(120, 20);
@@ -358,7 +372,8 @@
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(335, 400);
+            this.txtdiachi.Location = new System.Drawing.Point(335, 399);
+            this.txtdiachi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtdiachi.MenuManager = this.barManager1;
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(120, 20);
@@ -367,6 +382,7 @@
             // txtghichu
             // 
             this.txtghichu.Location = new System.Drawing.Point(335, 435);
+            this.txtghichu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtghichu.MenuManager = this.barManager1;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(120, 20);
@@ -376,7 +392,8 @@
             // 
             this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl3.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl3.Location = new System.Drawing.Point(12, 358);
+            this.labelControl3.Location = new System.Drawing.Point(12, 357);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(18, 13);
             this.labelControl3.TabIndex = 18;
@@ -387,6 +404,7 @@
             this.labelControl4.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl4.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl4.Location = new System.Drawing.Point(12, 442);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(31, 13);
             this.labelControl4.TabIndex = 19;
@@ -396,7 +414,8 @@
             // 
             this.labelControl5.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl5.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl5.Location = new System.Drawing.Point(263, 289);
+            this.labelControl5.Location = new System.Drawing.Point(263, 290);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(20, 13);
             this.labelControl5.TabIndex = 20;
@@ -407,6 +426,7 @@
             this.labelControl6.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl6.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl6.Location = new System.Drawing.Point(263, 329);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(47, 13);
             this.labelControl6.TabIndex = 21;
@@ -416,7 +436,8 @@
             // 
             this.labelControl7.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl7.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.labelControl7.Location = new System.Drawing.Point(263, 362);
+            this.labelControl7.Location = new System.Drawing.Point(263, 361);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 22;
@@ -427,6 +448,7 @@
             this.labelControl8.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl8.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl8.Location = new System.Drawing.Point(263, 403);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(32, 13);
             this.labelControl8.TabIndex = 23;
@@ -437,6 +459,7 @@
             this.labelControl9.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl9.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl9.Location = new System.Drawing.Point(263, 442);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(35, 13);
             this.labelControl9.TabIndex = 24;
@@ -447,6 +470,7 @@
             this.labelControl10.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.labelControl10.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl10.Location = new System.Drawing.Point(12, 403);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(41, 13);
             this.labelControl10.TabIndex = 25;
@@ -456,6 +480,7 @@
             // 
             this.txtdate.EditValue = null;
             this.txtdate.Location = new System.Drawing.Point(335, 326);
+            this.txtdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtdate.MenuManager = this.barManager1;
             this.txtdate.Name = "txtdate";
             this.txtdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -473,26 +498,28 @@
             // 
             // txtphai
             // 
-            this.txtphai.Location = new System.Drawing.Point(335, 289);
+            this.txtphai.Location = new System.Drawing.Point(335, 286);
+            this.txtphai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtphai.MenuManager = this.barManager1;
             this.txtphai.Name = "txtphai";
             this.txtphai.Properties.Columns = 2;
             this.txtphai.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("True", "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("False", "Nữ")});
-            this.txtphai.Size = new System.Drawing.Size(120, 20);
+            this.txtphai.Size = new System.Drawing.Size(120, 19);
             this.txtphai.TabIndex = 30;
             // 
             // txtnghihoc
             // 
             this.txtnghihoc.Location = new System.Drawing.Point(91, 396);
+            this.txtnghihoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtnghihoc.MenuManager = this.barManager1;
             this.txtnghihoc.Name = "txtnghihoc";
             this.txtnghihoc.Properties.Columns = 2;
             this.txtnghihoc.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("True", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("False", "No")});
-            this.txtnghihoc.Size = new System.Drawing.Size(120, 20);
+            this.txtnghihoc.Size = new System.Drawing.Size(120, 19);
             this.txtnghihoc.TabIndex = 17;
             // 
             // cmb2
@@ -500,7 +527,8 @@
             this.cmb2.DataSource = this.vDSPHANMANH2BindingSource;
             this.cmb2.DisplayMember = "TENCN";
             this.cmb2.FormattingEnabled = true;
-            this.cmb2.Location = new System.Drawing.Point(886, 12);
+            this.cmb2.Location = new System.Drawing.Point(885, 12);
+            this.cmb2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb2.Name = "cmb2";
             this.cmb2.Size = new System.Drawing.Size(121, 21);
             this.cmb2.TabIndex = 35;
@@ -523,7 +551,8 @@
             // 
             // txtmalop
             // 
-            this.txtmalop.Location = new System.Drawing.Point(91, 439);
+            this.txtmalop.Location = new System.Drawing.Point(91, 438);
+            this.txtmalop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtmalop.MenuManager = this.barManager1;
             this.txtmalop.Name = "txtmalop";
             this.txtmalop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -619,9 +648,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(603, 289);
+            this.dataGridView1.Location = new System.Drawing.Point(674, 324);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(342, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(339, 158);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
@@ -629,7 +659,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 514);
+            this.ClientSize = new System.Drawing.Size(1032, 513);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmb2);
             this.Controls.Add(this.labelControl10);
@@ -658,6 +688,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SinhVien";
             this.Text = "SinhVien";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

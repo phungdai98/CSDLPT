@@ -296,41 +296,83 @@ namespace QLDSV1
                 try
                 {
                     Program.servername = cmb2.SelectedValue.ToString();
-                    Program.mlogin = Program.remotelogin;
-                    Program.password = Program.remotepassword;
-                    DataConnection dc = new DataConnection();
-
-
-                    //Program.KetNoi();
-                    dal = new SinhVienDAL();
-                    ShowSinhVien();
-                    lobll = new LopBLL();
-                    ShowAllLop();
-
-                    txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
-                    txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
-                    txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-                    //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
-
-                    if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                    if(Program.servername.Equals(Program.tenServerDN))
                     {
-                        txtphai.SelectedIndex = 0;
+                        Program.mlogin = Program.mloginDN;
+                        Program.password = Program.passwordDN;
+                        DataConnection dc = new DataConnection();
+                        //MessageBox.Show(Program.mloginDN);
+                        //load
+                        dal = new SinhVienDAL();
+                        ShowSinhVien();
+                        lobll = new LopBLL();
+                        ShowAllLop();
+
+                        txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
+                        txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
+                        txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
+                        //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+
+                        if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                        {
+                            txtphai.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            txtphai.SelectedIndex = 1;
+                        }
+                        txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
+                        txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
+                        txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
+                        txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
+                        if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
+                        {
+                            txtnghihoc.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            txtnghihoc.SelectedIndex = 1;
+                        }
                     }
                     else
                     {
-                        txtphai.SelectedIndex = 1;
-                    }
-                    txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
-                    txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
-                    txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
-                    txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
-                    if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
-                    {
-                        txtnghihoc.SelectedIndex = 0;
-                    }
-                    else
-                    {
-                        txtnghihoc.SelectedIndex = 1;
+                        Program.mlogin = Program.remotelogin;
+                        Program.password = Program.remotepassword;
+                        DataConnection dc = new DataConnection();
+
+
+                        //Program.KetNoi();
+                        dal = new SinhVienDAL();
+                        ShowSinhVien();
+                        lobll = new LopBLL();
+                        ShowAllLop();
+
+                        txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
+                        txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
+                        txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
+                        //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+
+                        if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                        {
+                            txtphai.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            txtphai.SelectedIndex = 1;
+                        }
+                        txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
+                        txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
+                        txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
+                        txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
+                        if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
+                        {
+                            txtnghihoc.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            txtnghihoc.SelectedIndex = 1;
+                        }
+
                     }
 
                 }

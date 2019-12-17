@@ -24,6 +24,7 @@ namespace QLDSV1
         public static String remotepassword = "123";
         public static String mloginDN = "";
         public static String passwordDN = "";
+        public static String tenServerDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mChinhanh =0;

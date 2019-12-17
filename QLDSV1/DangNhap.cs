@@ -60,7 +60,7 @@ namespace QLDSV1
             if (Program.KetNoi() == 0) return;
 
             Program.mChinhanh = cmbCN.SelectedIndex;
-
+            Program.tenServerDN = cmbCN.SelectedValue.ToString();
             Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;
             string strLenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
