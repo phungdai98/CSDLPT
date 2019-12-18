@@ -85,6 +85,7 @@ namespace QLDSV1
         static void Main()
         {
             Application.EnableVisualStyles();
+            DevExpress.UserSkins.BonusSkins.Register();
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();

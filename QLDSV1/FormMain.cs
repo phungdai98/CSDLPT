@@ -39,5 +39,12 @@ namespace QLDSV1
             dsv.Show();
             
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Summer");
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Springtime");
+        }
     }
 }
