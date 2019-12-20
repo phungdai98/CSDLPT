@@ -50,8 +50,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmbDiem = new System.Windows.Forms.ComboBox();
-            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
             this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
             this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
@@ -59,8 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -244,7 +244,7 @@
             // cmbDiem
             // 
             this.cmbDiem.DataSource = this.vDSPHANMANH2BindingSource;
-            this.cmbDiem.DisplayMember = "TENCN";
+            this.cmbDiem.DisplayMember = "TENKHOA";
             this.cmbDiem.FormattingEnabled = true;
             this.cmbDiem.Location = new System.Drawing.Point(1070, 28);
             this.cmbDiem.Name = "cmbDiem";
@@ -253,15 +253,15 @@
             this.cmbDiem.ValueMember = "TENSERVER";
             this.cmbDiem.SelectedIndexChanged += new System.EventHandler(this.CmbDiem_SelectedIndexChanged);
             // 
-            // qLDSVDataSet1
-            // 
-            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
-            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vDSPHANMANH2BindingSource
             // 
             this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
             this.vDSPHANMANH2BindingSource.DataSource = this.qLDSVDataSet1;
+            // 
+            // qLDSVDataSet1
+            // 
+            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
+            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_DS_PHANMANH2TableAdapter
             // 
@@ -295,8 +295,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

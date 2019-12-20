@@ -289,7 +289,7 @@
             // cmb1
             // 
             this.cmb1.DataSource = this.vDSPHANMANH2BindingSource;
-            this.cmb1.DisplayMember = "TENCN";
+            this.cmb1.DisplayMember = "TENKHOA";
             this.cmb1.FormattingEnabled = true;
             this.cmb1.Location = new System.Drawing.Point(549, 32);
             this.cmb1.Name = "cmb1";

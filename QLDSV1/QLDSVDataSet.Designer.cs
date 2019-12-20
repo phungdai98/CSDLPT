@@ -279,9 +279,9 @@ namespace QLDSV1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class V_DS_PHANMANHDataTable : global::System.Data.TypedTableBase<V_DS_PHANMANHRow> {
             
-            private global::System.Data.DataColumn columnTENCN;
-            
             private global::System.Data.DataColumn columnTENSERVER;
+            
+            private global::System.Data.DataColumn columnTENKHOA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -318,17 +318,17 @@ namespace QLDSV1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TENCNColumn {
+            public global::System.Data.DataColumn TENSERVERColumn {
                 get {
-                    return this.columnTENCN;
+                    return this.columnTENSERVER;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TENSERVERColumn {
+            public global::System.Data.DataColumn TENKHOAColumn {
                 get {
-                    return this.columnTENSERVER;
+                    return this.columnTENKHOA;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace QLDSV1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public V_DS_PHANMANHRow AddV_DS_PHANMANHRow(string TENCN, string TENSERVER) {
+            public V_DS_PHANMANHRow AddV_DS_PHANMANHRow(string TENSERVER, string TENKHOA) {
                 V_DS_PHANMANHRow rowV_DS_PHANMANHRow = ((V_DS_PHANMANHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        TENCN,
-                        TENSERVER};
+                        TENSERVER,
+                        TENKHOA};
                 rowV_DS_PHANMANHRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DS_PHANMANHRow);
                 return rowV_DS_PHANMANHRow;
@@ -396,20 +396,20 @@ namespace QLDSV1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnTENCN = base.Columns["TENCN"];
                 this.columnTENSERVER = base.Columns["TENSERVER"];
+                this.columnTENKHOA = base.Columns["TENKHOA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnTENCN = new global::System.Data.DataColumn("TENCN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTENCN);
                 this.columnTENSERVER = new global::System.Data.DataColumn("TENSERVER", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENSERVER);
-                this.columnTENCN.AllowDBNull = false;
-                this.columnTENCN.MaxLength = 128;
+                this.columnTENKHOA = new global::System.Data.DataColumn("TENKHOA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTENKHOA);
                 this.columnTENSERVER.MaxLength = 128;
+                this.columnTENKHOA.AllowDBNull = false;
+                this.columnTENKHOA.MaxLength = 128;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -552,17 +552,6 @@ namespace QLDSV1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TENCN {
-                get {
-                    return ((string)(this[this.tableV_DS_PHANMANH.TENCNColumn]));
-                }
-                set {
-                    this[this.tableV_DS_PHANMANH.TENCNColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string TENSERVER {
                 get {
                     try {
@@ -574,6 +563,17 @@ namespace QLDSV1 {
                 }
                 set {
                     this[this.tableV_DS_PHANMANH.TENSERVERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TENKHOA {
+                get {
+                    return ((string)(this[this.tableV_DS_PHANMANH.TENKHOAColumn]));
+                }
+                set {
+                    this[this.tableV_DS_PHANMANH.TENKHOAColumn] = value;
                 }
             }
             
@@ -749,8 +749,8 @@ namespace QLDSV1.QLDSVDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_DS_PHANMANH";
-            tableMapping.ColumnMappings.Add("TENCN", "TENCN");
             tableMapping.ColumnMappings.Add("TENSERVER", "TENSERVER");
+            tableMapping.ColumnMappings.Add("TENKHOA", "TENKHOA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -767,7 +767,7 @@ namespace QLDSV1.QLDSVDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TENCN, TENSERVER FROM dbo.V_DS_PHANMANH";
+            this._commandCollection[0].CommandText = "SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

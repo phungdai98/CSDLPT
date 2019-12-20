@@ -61,10 +61,10 @@
             // 
             this.cmbCN.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vDSPHANMANHBindingSource, "TENSERVER", true));
             this.cmbCN.DataSource = this.vDSPHANMANHBindingSource;
-            this.cmbCN.DisplayMember = "TENCN";
+            this.cmbCN.DisplayMember = "TENKHOA";
             this.cmbCN.FormattingEnabled = true;
             this.cmbCN.Location = new System.Drawing.Point(461, 92);
-            this.cmbCN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCN.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCN.Name = "cmbCN";
             this.cmbCN.Size = new System.Drawing.Size(321, 25);
             this.cmbCN.TabIndex = 1;
@@ -101,7 +101,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(461, 217);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(321, 25);
             this.txtLogin.TabIndex = 3;
@@ -109,7 +109,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(461, 327);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(321, 25);
@@ -128,7 +128,7 @@
             // btndangnhap
             // 
             this.btndangnhap.Location = new System.Drawing.Point(573, 450);
-            this.btndangnhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btndangnhap.Margin = new System.Windows.Forms.Padding(4);
             this.btndangnhap.Name = "btndangnhap";
             this.btndangnhap.Size = new System.Drawing.Size(100, 30);
             this.btndangnhap.TabIndex = 6;
@@ -139,7 +139,7 @@
             // thoat
             // 
             this.thoat.Location = new System.Drawing.Point(761, 450);
-            this.thoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.thoat.Margin = new System.Windows.Forms.Padding(4);
             this.thoat.Name = "thoat";
             this.thoat.Size = new System.Drawing.Size(100, 30);
             this.thoat.TabIndex = 7;
@@ -165,7 +165,7 @@
             this.Controls.Add(this.cmbCN);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formdangnhap";
             this.Text = "DangNhap";
             this.Load += new System.EventHandler(this.DangNhap_Load);
