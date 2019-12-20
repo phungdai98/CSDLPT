@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLDSV1</RootNamespace>
     <AssemblyName>QLDSV1</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,6 +88,11 @@
       <DependentUpon>DiemSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="DiemSinhVienDAL.cs" />
+    <Compile Include="DS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,20 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDongHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDongHocPhi.Designer.cs" />
+    <Compile Include="frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhongKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongKeToan.Designer.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="LopDAL.cs" />
@@ -133,6 +153,11 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDongHocPhi.resx" />
+    <EmbeddedResource Include="frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongKeToan.resx" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,9 +167,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DataSet1.xsc">
@@ -157,6 +184,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DS1.xsc">
+      <DependentUpon>DS1.xsd</DependentUpon>
+    </None>
+    <None Include="DS1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS1.xss">
+      <DependentUpon>DS1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

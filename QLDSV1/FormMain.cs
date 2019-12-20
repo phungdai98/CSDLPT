@@ -46,5 +46,13 @@ namespace QLDSV1
             //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Summer");
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Springtime");
         }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //btnMonHoc
+            frmMonHoc mh = new frmMonHoc();
+            mh.MdiParent = this;
+            mh.Show();
+        }
     }
 }
