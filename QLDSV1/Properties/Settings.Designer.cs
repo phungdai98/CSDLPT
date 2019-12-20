@@ -26,7 +26,7 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH;Initial Catalog=QLDSV;User ID=sa;Password=mixaolanot123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
         public string QLDSVConnectionString {
             get {
                 return ((string)(this["QLDSVConnectionString"]));
@@ -36,8 +36,7 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERONE;Initial Catalog=QLDSV;User ID=sa;Password=mixaolano" +
-            "t123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR1;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
         public string QLDSVConnectionString1 {
             get {
                 return ((string)(this["QLDSVConnectionString1"]));
@@ -47,7 +46,7 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERTWO;User ID=sa;Password=mixaolanot123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR2;User ID=sa;Password=123456")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -57,11 +56,32 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERTWO;Initial Catalog=QLDSV;User ID=sa;Password=mixaolano" +
-            "t123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR2;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
         public string QLDSVConnectionString2 {
             get {
                 return ((string)(this["QLDSVConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR1;Initial Catalog=QLDSV;Persist Security Info=True;User ID" +
+            "=nahao;Password=123456")]
+        public string QLDSVConnectionString3 {
+            get {
+                return ((string)(this["QLDSVConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR3;Initial Catalog=QLDSV;Persist Security Info=True;User ID" +
+            "=pttoan;Password=123456")]
+        public string QLDSVConnectionString4 {
+            get {
+                return ((string)(this["QLDSVConnectionString4"]));
             }
         }
     }

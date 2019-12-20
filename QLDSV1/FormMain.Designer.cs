@@ -34,18 +34,20 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btbMonHoc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -60,9 +62,10 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.skinRibbonGalleryBarItem1,
-            this.skinDropDownButtonItem1});
+            this.skinDropDownButtonItem1,
+            this.btbMonHoc});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 9;
+            this.ribbon.MaxItemId = 10;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -99,12 +102,29 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem3_ItemClick);
             // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 4;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 5;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup4,
+            this.ribbonPageGroup6,
             this.ribbonPageGroup5});
             this.ribbonPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
             this.ribbonPage1.Name = "ribbonPage1";
@@ -127,6 +147,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.ribbonPageGroup5.ItemLinks.Add(this.skinDropDownButtonItem1);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonPage2
             // 
@@ -151,28 +178,20 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // ribbonPageCategory1
+            // ribbonPageGroup6
             // 
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            this.ribbonPageGroup6.ItemLinks.Add(this.btbMonHoc);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
-            // ribbonPageGroup5
+            // btbMonHoc
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonPageGroup5.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
-            // 
-            // skinRibbonGalleryBarItem1
-            // 
-            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
-            this.skinRibbonGalleryBarItem1.Id = 4;
-            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
-            // 
-            // skinDropDownButtonItem1
-            // 
-            this.skinDropDownButtonItem1.Id = 5;
-            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            this.btbMonHoc.Caption = "Môn học";
+            this.btbMonHoc.Id = 9;
+            this.btbMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btbMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btbMonHoc.Name = "btbMonHoc";
+            this.btbMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // FormMain
             // 
@@ -212,5 +231,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btbMonHoc;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }

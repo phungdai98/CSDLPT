@@ -325,3 +325,4 @@ C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.csproj.CoreCompileInput
 C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.csproj.CopyComplete
 C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.exe
 C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.pdb
+C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmMonHoc.resources
