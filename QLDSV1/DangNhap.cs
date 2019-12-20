@@ -86,12 +86,26 @@ namespace QLDSV1
             //fLogin.Show();
             //SinhVien fsv = new SinhVien();
             //fsv.Show();
-            FormMain fm = new FormMain();
-            fm.Show();
+            if (String.Equals(Program.mGroup, "PGV") || String.Equals(Program.mGroup, "Khoa"))
+            {
+                FormMain fm = new FormMain();
+                fm.Show();
+                //this.Close(); // closes the Form2 instance.
+            }
+            if (String.Equals(Program.mGroup, "PKeToan"))
+            {
+                frmPhongKeToan hocphi = new frmPhongKeToan(); // Instantiate a Form3 object.
+                hocphi.Show(); // Show Form3 and
+                //this.Close(); // closes the Form2 instance.
+            }
+            
             
 
         }
 
-
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

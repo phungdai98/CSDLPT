@@ -42,15 +42,17 @@
             this.btndangnhap = new System.Windows.Forms.Button();
             this.thoat = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 102);
+            this.label1.Location = new System.Drawing.Point(102, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 17);
@@ -63,7 +65,7 @@
             this.cmbCN.DataSource = this.vDSPHANMANHBindingSource;
             this.cmbCN.DisplayMember = "TENKHOA";
             this.cmbCN.FormattingEnabled = true;
-            this.cmbCN.Location = new System.Drawing.Point(461, 92);
+            this.cmbCN.Location = new System.Drawing.Point(259, 64);
             this.cmbCN.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCN.Name = "cmbCN";
             this.cmbCN.Size = new System.Drawing.Size(321, 25);
@@ -92,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 217);
+            this.label2.Location = new System.Drawing.Point(102, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
@@ -101,7 +103,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(461, 217);
+            this.txtLogin.Location = new System.Drawing.Point(259, 127);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(321, 25);
@@ -109,7 +111,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(461, 327);
+            this.txtPass.Location = new System.Drawing.Point(259, 175);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -119,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 331);
+            this.label3.Location = new System.Drawing.Point(102, 179);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
@@ -128,7 +130,7 @@
             // 
             // btndangnhap
             // 
-            this.btndangnhap.Location = new System.Drawing.Point(573, 450);
+            this.btndangnhap.Location = new System.Drawing.Point(164, 262);
             this.btndangnhap.Margin = new System.Windows.Forms.Padding(4);
             this.btndangnhap.Name = "btndangnhap";
             this.btndangnhap.Size = new System.Drawing.Size(100, 30);
@@ -139,40 +141,55 @@
             // 
             // thoat
             // 
-            this.thoat.Location = new System.Drawing.Point(761, 450);
+            this.thoat.Location = new System.Drawing.Point(395, 262);
             this.thoat.Margin = new System.Windows.Forms.Padding(4);
             this.thoat.Name = "thoat";
             this.thoat.Size = new System.Drawing.Size(100, 30);
             this.thoat.TabIndex = 7;
             this.thoat.Text = "Thoát";
             this.thoat.UseVisualStyleBackColor = true;
+            this.thoat.Click += new System.EventHandler(this.thoat_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.cmbCN);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.thoat);
+            this.panel1.Controls.Add(this.btndangnhap);
+            this.panel1.Controls.Add(this.txtLogin);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtPass);
+            this.panel1.Location = new System.Drawing.Point(166, 111);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(696, 329);
+            this.panel1.TabIndex = 8;
+            // 
             // formdangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 588);
-            this.Controls.Add(this.thoat);
-            this.Controls.Add(this.btndangnhap);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbCN);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1061, 482);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formdangnhap";
             this.Text = "DangNhap";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANHBindingSource1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +212,6 @@
         private System.Windows.Forms.Button btndangnhap;
         private System.Windows.Forms.Button thoat;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

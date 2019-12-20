@@ -105,12 +105,20 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDongHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDongHocPhi.Designer.cs" />
     <Compile Include="frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhongKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongKeToan.Designer.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="LopDAL.cs" />
@@ -145,9 +153,11 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDongHocPhi.resx" />
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongKeToan.resx" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
