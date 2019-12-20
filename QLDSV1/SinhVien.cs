@@ -56,23 +56,7 @@ namespace QLDSV1
         }
         private void SinhVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSVDataSet5.DSNHAPSV' table. You can move, or remove it, as needed.
-            this.dSNHAPSVTableAdapter.Fill(this.qLDSVDataSet5.DSNHAPSV);
-            // TODO: This line of code loads data into the 'qLDSVDataSet4.DSLOP' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'qLDSVDataSet3.DSLOP' table. You can move, or remove it, as needed.
-            //if (Program.temp==1)
-            //{
-            //    this.dSLOPTableAdapter2.Fill(this.qLDSVDataSet4.DSLOP);
-            //}
-            //if (Program.temp==0)
-            //{
-            //    this.dSLOPTableAdapter1.Fill(this.qLDSVDataSet3.DSLOP);
-            //}
-
-            // TODO: This line of code loads data into the 'qLDSVDataSet2.DSLOP' table. You can move, or remove it, as needed.
-            this.dSLOPTableAdapter.Fill(this.qLDSVDataSet2.DSLOP);
-            // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
+            
             this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
             int index = 0;
             ShowAllLop();

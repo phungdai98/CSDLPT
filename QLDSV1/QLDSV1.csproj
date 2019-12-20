@@ -114,26 +114,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet11.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLDSVDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSVDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLDSVDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSVDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLDSVDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSVDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLDSVDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,50 +188,6 @@
     </None>
     <None Include="QLDSVDataSet11.xss">
       <DependentUpon>QLDSVDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet2.xsc">
-      <DependentUpon>QLDSVDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSVDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSVDataSet2.xss">
-      <DependentUpon>QLDSVDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet3.xsc">
-      <DependentUpon>QLDSVDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSVDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSVDataSet3.xss">
-      <DependentUpon>QLDSVDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet4.xsc">
-      <DependentUpon>QLDSVDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSVDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSVDataSet4.xss">
-      <DependentUpon>QLDSVDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet5.xsc">
-      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSVDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSVDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSVDataSet5.xss">
-      <DependentUpon>QLDSVDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
