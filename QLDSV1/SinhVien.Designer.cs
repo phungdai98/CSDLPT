@@ -73,22 +73,14 @@
             this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
             this.txtmalop = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.dSLOPBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            //this.qLDSVDataSet2 = new QLDSV1.QLDSVDataSet2();
             this.dSLOPBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.dSLOPBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            //this.qLDSVDataSet3 = new QLDSV1.QLDSVDataSet3();
             this.dSLOPBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            //this.qLDSVDataSet4 = new QLDSV1.QLDSVDataSet4();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new QLDSV1.DataSet1();
             this.dSLOPBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.dSLOPTableAdapter = new QLDSV1.QLDSVDataSet2TableAdapters.DSLOPTableAdapter();
-            //this.dSLOPTableAdapter1 = new QLDSV1.QLDSVDataSet3TableAdapters.DSLOPTableAdapter();
-            //this.dSLOPTableAdapter2 = new QLDSV1.QLDSVDataSet4TableAdapters.DSLOPTableAdapter();
             this.dSNHAPSVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.qLDSVDataSet5 = new QLDSV1.QLDSVDataSet5();
-            //this.dSNHAPSVTableAdapter = new QLDSV1.QLDSVDataSet5TableAdapters.DSNHAPSVTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablesv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -110,18 +102,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmalop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource5)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource3)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource2)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSNHAPSVBindingSource)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -525,7 +513,7 @@
             // cmb2
             // 
             this.cmb2.DataSource = this.vDSPHANMANH2BindingSource;
-            this.cmb2.DisplayMember = "TENCN";
+            this.cmb2.DisplayMember = "TENKHOA";
             this.cmb2.FormattingEnabled = true;
             this.cmb2.Location = new System.Drawing.Point(885, 12);
             this.cmb2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -564,41 +552,6 @@
             this.txtmalop.Size = new System.Drawing.Size(120, 20);
             this.txtmalop.TabIndex = 11;
             // 
-            // dSLOPBindingSource5
-            // 
-            //this.dSLOPBindingSource5.DataMember = "DSLOP";
-            //this.dSLOPBindingSource5.DataSource = this.qLDSVDataSet2;
-            // 
-            // qLDSVDataSet2
-            // 
-            //this.qLDSVDataSet2.DataSetName = "QLDSVDataSet2";
-            //this.qLDSVDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSLOPBindingSource4
-            // 
-            //this.dSLOPBindingSource4.DataMember = "DSLOP";
-            //this.dSLOPBindingSource4.DataSource = this.qLDSVDataSet2;
-            // 
-            // dSLOPBindingSource3
-            // 
-            //this.dSLOPBindingSource3.DataMember = "DSLOP";
-            //this.dSLOPBindingSource3.DataSource = this.qLDSVDataSet3;
-            // 
-            // qLDSVDataSet3
-            // 
-            //this.qLDSVDataSet3.DataSetName = "QLDSVDataSet3";
-            //this.qLDSVDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSLOPBindingSource2
-            // 
-            //this.dSLOPBindingSource2.DataMember = "DSLOP";
-            //this.dSLOPBindingSource2.DataSource = this.qLDSVDataSet4;
-            // 
-            // qLDSVDataSet4
-            // 
-            //this.qLDSVDataSet4.DataSetName = "QLDSVDataSet4";
-            //this.qLDSVDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataSet1BindingSource
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
@@ -608,42 +561,6 @@
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSLOPBindingSource1
-            // 
-            //this.dSLOPBindingSource1.DataMember = "DSLOP";
-            //this.dSLOPBindingSource1.DataSource = this.qLDSVDataSet3;
-            // 
-            // dSLOPBindingSource
-            // 
-            //this.dSLOPBindingSource.DataMember = "DSLOP";
-            //this.dSLOPBindingSource.DataSource = this.qLDSVDataSet2;
-            // 
-            // dSLOPTableAdapter
-            // 
-           // this.dSLOPTableAdapter.ClearBeforeFill = true;
-            // 
-            // dSLOPTableAdapter1
-            // 
-            //this.dSLOPTableAdapter1.ClearBeforeFill = true;
-            // 
-            // dSLOPTableAdapter2
-            // 
-           // this.dSLOPTableAdapter2.ClearBeforeFill = true;
-            // 
-            // dSNHAPSVBindingSource
-            // 
-            //this.dSNHAPSVBindingSource.DataMember = "DSNHAPSV";
-            //this.dSNHAPSVBindingSource.DataSource = this.qLDSVDataSet5;
-            // 
-            // qLDSVDataSet5
-            // 
-            //this.qLDSVDataSet5.DataSetName = "QLDSVDataSet5";
-            //this.qLDSVDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSNHAPSVTableAdapter
-            // 
-            //this.dSNHAPSVTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -713,18 +630,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmalop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource5)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource3)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource2)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSNHAPSVBindingSource)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
