@@ -54,6 +54,7 @@ namespace QLDSV1
             {
                 string malop = txtlop.Text;
                 ShowDanhSachSV(malop);
+                btnSave.Enabled = false;
                 string notice = "" + Program.demrow;
             }
             
@@ -140,9 +141,9 @@ namespace QLDSV1
             string mamh = txtmonhoc.Text;
             int lanthi = int.Parse(txtlanthi.Text);
             string notice = "";
-            string notice3 = "Các sinh viên đã có điểm môn " +mamh+" lần " + 1 +" nếu lưu lại điểm tự động chuyển lần 2  : ";
-            string notice1 = "Các sinh viên đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này";
-            string notice2 = "Các sinh viên sau chưa có điểm lần 1 nếu lưu lại sẽ tự cập nhập lần 1 : ";
+            string notice3 = "Các sinh viên sau đây đã có điểm môn " +mamh+" lần " + 1 +" nếu lưu lại điểm tự động chuyển lần 2  : ";
+            string notice1 = "Các sinh viên sau đây đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này";
+            string notice2 = "Các sinh viên sau đây chưa có điểm lần 1 nếu lưu lại sẽ tự cập nhập lần 1 : ";
             for (int i = 0; i < Program.demrow; i++)
             {
                 int index = -1;
@@ -222,11 +223,22 @@ namespace QLDSV1
                 try
                 {
                     Program.servername = cmbDiem.SelectedValue.ToString();
-                    Program.mlogin = Program.remotelogin;
-                    Program.password = Program.remotepassword;
-                    DataConnection dc = new DataConnection();
-                    //MessageBox.Show(Program.servername);
-                    dal = new DiemSinhVienDAL();
+                    if (Program.servername.Equals(Program.tenServerDN))
+                    {
+                        Program.mlogin = Program.mloginDN;
+                        Program.password = Program.passwordDN;
+                        DataConnection dc = new DataConnection();
+                        dal = new DiemSinhVienDAL();
+                    }
+                    else
+                    {
+                        Program.mlogin = Program.remotelogin;
+                        Program.password = Program.remotepassword;
+                        DataConnection dc = new DataConnection();
+                        //MessageBox.Show(Program.servername);
+                        dal = new DiemSinhVienDAL();
+                    }
+                       
                 }
                 catch (Exception)
                 {

@@ -26,7 +26,7 @@ namespace QLDSV1
         String temp8 = "";
         String temp9 = "";
         String temp10 = "";
-        List<BeanSinhVien> list= new List<BeanSinhVien>();
+        Stack<BeanSinhVien> st= new Stack<BeanSinhVien>();
         public SinhVien()
         {
             InitializeComponent();
@@ -78,31 +78,36 @@ namespace QLDSV1
             ShowAllLop();
             Program.maLopSub = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
             ShowSinhVien();
-            txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
-            txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
-            txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-            //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
-            txtmalop.Text= dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
-            if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+            int index1 = gridView1.FocusedRowHandle;
+            if (index1 >= 0)
             {
-                txtphai.SelectedIndex = 0;
+                txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
+                txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
+                txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
+                //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+                txtmalop.Text = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
+                if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                {
+                    txtphai.SelectedIndex = 0;
+                }
+                else
+                {
+                    txtphai.SelectedIndex = 1;
+                }
+                txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
+                txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
+                txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
+                txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
+                if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
+                {
+                    txtnghihoc.SelectedIndex = 0;
+                }
+                else
+                {
+                    txtnghihoc.SelectedIndex = 1;
+                }
             }
-            else
-            {
-                txtphai.SelectedIndex = 1;
-            }
-            txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
-            txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
-            txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
-            txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
-            if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
-            {
-                txtnghihoc.SelectedIndex = 0;
-            }
-            else
-            {
-                txtnghihoc.SelectedIndex = 1;
-            }
+            
             cmb2.SelectedIndex = -1;
             cmb2.SelectedIndex = Program.temp;
             if (Program.mGroup.Equals("KHOA"))
@@ -242,7 +247,7 @@ namespace QLDSV1
                 sv.GHICHU = txtghichu.Text;
                 bool nghihoc = bool.Parse(txtnghihoc.Text);
                 sv.NGHIHOC = nghihoc;
-                list.Add(sv);
+                st.Push(sv);
                 if (MessageBox.Show("Ban muon xoa khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     if (dal.DeleteSinhVien(sv))
@@ -303,35 +308,41 @@ namespace QLDSV1
                         DataConnection dc = new DataConnection();
                         //MessageBox.Show(Program.mloginDN);
                         //load
-                        dal = new SinhVienDAL();
-                        ShowSinhVien();
                         lobll = new LopBLL();
                         ShowAllLop();
+                        Program.maLopSub = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
+                        dal = new SinhVienDAL();
+                        ShowSinhVien();
 
-                        txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
-                        txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
-                        txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-                        //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
 
-                        if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                        int index1 = gridView1.FocusedRowHandle;
+                        if (index1 >= 0)
                         {
-                            txtphai.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            txtphai.SelectedIndex = 1;
-                        }
-                        txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
-                        txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
-                        txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
-                        txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
-                        if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
-                        {
-                            txtnghihoc.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            txtnghihoc.SelectedIndex = 1;
+                            txtmasv.Text = gridView1.GetRowCellValue(0, "MASV").ToString();
+                            txtho.Text = gridView1.GetRowCellValue(0, "HO").ToString();
+                            txtten.Text = gridView1.GetRowCellValue(0, "TEN").ToString();
+                            //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+                            txtmalop.Text = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
+                            if (gridView1.GetRowCellValue(0, "PHAI").ToString().Equals("True"))
+                            {
+                                txtphai.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                txtphai.SelectedIndex = 1;
+                            }
+                            txtdate.Text = gridView1.GetRowCellValue(0, "NGAYSINH").ToString();
+                            txtnoisinh.Text = gridView1.GetRowCellValue(0, "NOISINH").ToString();
+                            txtdiachi.Text = gridView1.GetRowCellValue(0, "DIACHI").ToString();
+                            txtghichu.Text = gridView1.GetRowCellValue(0, "GHICHU").ToString();
+                            if (gridView1.GetRowCellValue(0, "NGHIHOC").ToString().Equals("True"))
+                            {
+                                txtnghihoc.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                txtnghihoc.SelectedIndex = 1;
+                            }
                         }
                     }
                     else
@@ -342,35 +353,41 @@ namespace QLDSV1
 
 
                         //Program.KetNoi();
-                        dal = new SinhVienDAL();
-                        ShowSinhVien();
                         lobll = new LopBLL();
                         ShowAllLop();
+                        Program.maLopSub = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
+                        dal = new SinhVienDAL();
+                        ShowSinhVien();
 
-                        txtmasv.Text = gridView1.GetRowCellValue(index, "MASV").ToString();
-                        txtho.Text = gridView1.GetRowCellValue(index, "HO").ToString();
-                        txtten.Text = gridView1.GetRowCellValue(index, "TEN").ToString();
-                        //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
 
-                        if (gridView1.GetRowCellValue(index, "PHAI").ToString().Equals("True"))
+                        int index1 = gridView1.FocusedRowHandle;
+                        if (index1 >= 0)
                         {
-                            txtphai.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            txtphai.SelectedIndex = 1;
-                        }
-                        txtdate.Text = gridView1.GetRowCellValue(index, "NGAYSINH").ToString();
-                        txtnoisinh.Text = gridView1.GetRowCellValue(index, "NOISINH").ToString();
-                        txtdiachi.Text = gridView1.GetRowCellValue(index, "DIACHI").ToString();
-                        txtghichu.Text = gridView1.GetRowCellValue(index, "GHICHU").ToString();
-                        if (gridView1.GetRowCellValue(index, "NGHIHOC").ToString().Equals("True"))
-                        {
-                            txtnghihoc.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            txtnghihoc.SelectedIndex = 1;
+                            txtmasv.Text = gridView1.GetRowCellValue(0, "MASV").ToString();
+                            txtho.Text = gridView1.GetRowCellValue(0, "HO").ToString();
+                            txtten.Text = gridView1.GetRowCellValue(0, "TEN").ToString();
+                            //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+                            txtmalop.Text = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
+                            if (gridView1.GetRowCellValue(0, "PHAI").ToString().Equals("True"))
+                            {
+                                txtphai.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                txtphai.SelectedIndex = 1;
+                            }
+                            txtdate.Text = gridView1.GetRowCellValue(0, "NGAYSINH").ToString();
+                            txtnoisinh.Text = gridView1.GetRowCellValue(0, "NOISINH").ToString();
+                            txtdiachi.Text = gridView1.GetRowCellValue(0, "DIACHI").ToString();
+                            txtghichu.Text = gridView1.GetRowCellValue(0, "GHICHU").ToString();
+                            if (gridView1.GetRowCellValue(0, "NGHIHOC").ToString().Equals("True"))
+                            {
+                                txtnghihoc.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                txtnghihoc.SelectedIndex = 1;
+                            }
                         }
 
                     }
@@ -382,7 +399,7 @@ namespace QLDSV1
 
                 }
             }
-            list.Clear();
+            st.Clear();
         }
 
         private void Btnphuchoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -417,21 +434,8 @@ namespace QLDSV1
         private void BarButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //list= new List<BeanSinhVien>();
-            foreach (var li in list)
-            {
-                BeanSinhVien sv = new BeanSinhVien();
-                sv.MASV = li.MASV;
-                sv.HO = li.HO;
-                sv.TEN = li.TEN;
-                sv.MALOP = li.MALOP;
-                //Boolean phai = Boolean.Parse(txtphai.Text);
-                sv.PHAI = li.PHAI;
-                sv.NGAYSINH = li.NGAYSINH;
-                sv.NOISINH = li.NOISINH;
-                sv.DIACHI = li.DIACHI;
-                sv.GHICHU = li.GHICHU;
+                BeanSinhVien sv = st.Pop();
                 
-                sv.NGHIHOC = li.NGHIHOC;
                 if (dal.InsertSinhVien(sv))
                 {
                     ShowSinhVien();
@@ -444,21 +448,47 @@ namespace QLDSV1
                     //MessageBox.Show("Đã có lỗi", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
-
-            }
-            list.Clear();
             
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            int index1 = 0;
+            //int index1 = 0;
             if (index >= 0)
             {
                 txtmalop.Text= dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
                 Program.maLopSub = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
                 ShowSinhVien();
+                int index1 = gridView1.FocusedRowHandle;
+                if (index1 >= 0)
+                {
+                    txtmasv.Text = gridView1.GetRowCellValue(0, "MASV").ToString();
+                    txtho.Text = gridView1.GetRowCellValue(0, "HO").ToString();
+                    txtten.Text = gridView1.GetRowCellValue(0, "TEN").ToString();
+                    //txtmalop.Text = gridView1.GetRowCellValue(index, "MALOP").ToString();
+                    //txtmalop.Text = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
+                    if (gridView1.GetRowCellValue(0 ,"PHAI").ToString().Equals("True"))
+                    {
+                        txtphai.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        txtphai.SelectedIndex = 1;
+                    }
+                    txtdate.Text = gridView1.GetRowCellValue(0, "NGAYSINH").ToString();
+                    txtnoisinh.Text = gridView1.GetRowCellValue(0, "NOISINH").ToString();
+                    txtdiachi.Text = gridView1.GetRowCellValue(0, "DIACHI").ToString();
+                    txtghichu.Text = gridView1.GetRowCellValue(0, "GHICHU").ToString();
+                    if (gridView1.GetRowCellValue(0, "NGHIHOC").ToString().Equals("True"))
+                    {
+                        txtnghihoc.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        txtnghihoc.SelectedIndex = 1;
+                    }
+                }
             }
         }
     }

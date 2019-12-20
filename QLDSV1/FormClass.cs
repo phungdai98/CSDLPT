@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace QLDSV1
 {
@@ -21,6 +22,8 @@ namespace QLDSV1
         String temp1="";
         String temp2="";
         String temp3="";
+        //List<Lop> list = new List<Lop>();
+        Stack<Lop> st = new Stack<Lop>();
         public FormClass()
         {
             InitializeComponent();
@@ -162,7 +165,10 @@ namespace QLDSV1
             {
                 Lop l = new Lop();
                 l.MALOP = txtMaLop.Text;
-                if(MessageBox.Show("Ban muon xoa khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                l.TENLOP = txtTenLop.Text;
+                l.MAKH = txtMaKhoa.Text;
+                st.Push(l);
+                if (MessageBox.Show("Ban muon xoa khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     if (lobll.Delete(l))
                     {
@@ -179,9 +185,16 @@ namespace QLDSV1
 
         private void BarButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            txtMaLop.Text=temp1;
-            txtTenLop.Text=temp2;
-            txtMaKhoa.Text=temp3;
+            //txtMaLop.Text=temp1;
+            //txtTenLop.Text=temp2;
+            //txtMaKhoa.Text=temp3;
+            Lop l = st.Pop();
+            if (lobll.InsertLop(l))
+            {
+                ShowAllLop();
+                //MessageBox.Show("Phục hồi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }
