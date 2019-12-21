@@ -65,5 +65,45 @@ namespace QLDSV1
            
 
         }
+        public DataTable getdIEM(String masv,string mamh)
+        {
+            string sql = "SELECT MASV,MAMH,LAN,DIEM FROM DIEM WHERE MASV="+"'"+masv+"'"+" AND MAMH="+"'"+mamh+"'";
+            //B2:Tạo 1 connect đến sql
+            SqlConnection con = dc.getConnect();
+            //B3 :Khoi tao lop SqlDataAdapter
+            da = new SqlDataAdapter(sql, con);
+            //B4:
+            con.Open();
+            //B5 Đổ dl ra datatable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            //Program.demrow = dt.Rows.Count;
+            con.Close();
+            return dt;
+        }
+        public void updateDiem(BeanDiemSV dsv)
+        {
+            string sql = "UPDATE DIEM SET DIEM=@DIEM WHERE MASV=@MASV AND MAMH=@MAMH AND LAN=@LAN";
+            SqlConnection con = dc.getConnect();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MASV", SqlDbType.NChar).Value = dsv.MASV;
+                cmd.Parameters.Add("@MAMH", SqlDbType.NChar).Value = dsv.MAMH;
+                cmd.Parameters.Add("@LAN", SqlDbType.SmallInt).Value = dsv.LANTHI;
+                cmd.Parameters.Add("@DIEM", SqlDbType.Float).Value = dsv.DIEM;
+                cmd.ExecuteNonQuery();
+                //con.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Lỗi");
+
+            }
+
+
+        }
     }
 }

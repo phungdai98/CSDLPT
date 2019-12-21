@@ -105,6 +105,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="formUpdateDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUpdateDiem.Designer.cs">
+      <DependentUpon>formUpdateDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDongHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUpdateDiem.resx">
+      <DependentUpon>formUpdateDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDongHocPhi.resx" />
     <EmbeddedResource Include="frmMonHoc.resx">

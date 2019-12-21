@@ -443,3 +443,4 @@ D:\CSDLPT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.csproj.CoreCompileInputs.cache
 D:\CSDLPT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.csproj.CopyComplete
 D:\CSDLPT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.exe
 D:\CSDLPT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.pdb
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formUpdateDiem.resources

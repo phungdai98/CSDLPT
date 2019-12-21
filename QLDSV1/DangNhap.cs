@@ -86,7 +86,7 @@ namespace QLDSV1
             //fLogin.Show();
             //SinhVien fsv = new SinhVien();
             //fsv.Show();
-            if (String.Equals(Program.mGroup, "PGV") || String.Equals(Program.mGroup, "Khoa"))
+            if (String.Equals(Program.mGroup, "PGV") || String.Equals(Program.mGroup, "KHOA"))
             {
                 FormMain fm = new FormMain();
                 fm.Show();
