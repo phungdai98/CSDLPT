@@ -81,6 +81,22 @@ namespace QLDSV1
             con.Close();
             return dt;
         }
+        public int checkdiem(String masv, string mamh)
+        {
+            string sql = "SELECT MASV,MAMH,LAN,DIEM FROM DIEM WHERE MASV=" + "'" + masv + "'" + " AND MAMH=" + "'" + mamh + "'";
+            //B2:Tạo 1 connect đến sql
+            SqlConnection con = dc.getConnect();
+            //B3 :Khoi tao lop SqlDataAdapter
+            da = new SqlDataAdapter(sql, con);
+            //B4:
+            con.Open();
+            //B5 Đổ dl ra datatable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            //Program.demrow = dt.Rows.Count;
+            con.Close();
+            return dt.Rows.Count;
+        }
         public void updateDiem(BeanDiemSV dsv)
         {
             string sql = "UPDATE DIEM SET DIEM=@DIEM WHERE MASV=@MASV AND MAMH=@MAMH AND LAN=@LAN";

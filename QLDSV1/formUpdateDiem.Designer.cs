@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUpdateDiem));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.table_diem = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtmasv = new System.Windows.Forms.TextBox();
             this.txtmamh = new System.Windows.Forms.ComboBox();
-            this.dS = new QLDSV1.DS();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new QLDSV1.DS();
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtlanthi = new System.Windows.Forms.TextBox();
@@ -45,25 +45,26 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_diem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // table_diem
             // 
-            this.gridControl1.Location = new System.Drawing.Point(590, 29);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(427, 329);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.table_diem.Location = new System.Drawing.Point(590, 29);
+            this.table_diem.MainView = this.gridView1;
+            this.table_diem.Name = "table_diem";
+            this.table_diem.Size = new System.Drawing.Size(427, 329);
+            this.table_diem.TabIndex = 0;
+            this.table_diem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.table_diem.Click += new System.EventHandler(this.Table_diem_Click);
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.table_diem;
             this.gridView1.Name = "gridView1";
             // 
             // labelControl1
@@ -101,15 +102,15 @@
             this.txtmamh.ValueMember = "MAMH";
             this.txtmamh.SelectedIndexChanged += new System.EventHandler(this.Txtmamh_SelectedIndexChanged);
             // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // mONHOCBindingSource
             // 
             this.mONHOCBindingSource.DataMember = "MONHOC";
             this.mONHOCBindingSource.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // mONHOCTableAdapter
             // 
@@ -163,6 +164,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(108, 35);
             this.simpleButton2.TabIndex = 10;
             this.simpleButton2.Text = "Lưu lại";
+            this.simpleButton2.Click += new System.EventHandler(this.SimpleButton2_Click);
             // 
             // formUpdateDiem
             // 
@@ -179,14 +181,14 @@
             this.Controls.Add(this.txtmasv);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.table_diem);
             this.Name = "formUpdateDiem";
             this.Text = "formUpdateDiem";
             this.Load += new System.EventHandler(this.FormUpdateDiem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_diem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +196,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl table_diem;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
