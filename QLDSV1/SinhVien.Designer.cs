@@ -515,7 +515,7 @@
             this.cmb2.DataSource = this.vDSPHANMANH2BindingSource;
             this.cmb2.DisplayMember = "TENKHOA";
             this.cmb2.FormattingEnabled = true;
-            this.cmb2.Location = new System.Drawing.Point(885, 12);
+            this.cmb2.Location = new System.Drawing.Point(792, 24);
             this.cmb2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb2.Name = "cmb2";
             this.cmb2.Size = new System.Drawing.Size(121, 21);

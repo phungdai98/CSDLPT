@@ -767,7 +767,7 @@ namespace QLDSV1.QLDSVDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH WHERE TENKHOA NOT LIKE \'%KETOAN%" +
+            this._commandCollection[0].CommandText = "SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH where TENKHOA not like \'%KETOAN%" +
                 "\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }

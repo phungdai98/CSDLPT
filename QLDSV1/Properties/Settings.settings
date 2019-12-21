@@ -34,5 +34,37 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=MAYTINH\SERVERTWO;Initial Catalog=QLDSV;User ID=sa;Password=mixaolanot123</Value>
     </Setting>
+    <Setting Name="QLDSVConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=VUDUONG\SVR1;Initial Catalog=QLDSV;Persist Security Info=True;User ID=nahao;Password=123456&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=VUDUONG\SVR1;Initial Catalog=QLDSV;Persist Security Info=True;User ID=nahao;Password=123456</Value>
+    </Setting>
+    <Setting Name="QLDSVConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=VUDUONG\SVR3;Initial Catalog=QLDSV;Persist Security Info=True;User ID=pttoan;Password=123456&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=VUDUONG\SVR3;Initial Catalog=QLDSV;Persist Security Info=True;User ID=pttoan;Password=123456</Value>
+    </Setting>
+    <Setting Name="DS" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=MAYTINH\SERVERONE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=MAYTINH\SERVERONE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="QLDSVConnectionString5" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=MAYTINH\SERVERTHREE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=vxthe;Password=123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=MAYTINH\SERVERTHREE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=vxthe;Password=123</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

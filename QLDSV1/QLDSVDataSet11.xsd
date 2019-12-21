@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_DS_PHANMANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH WHERE TENKHOA NOT LIKE '%KETOAN%'</CommandText>
+                    <CommandText>SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH where TENKHOA not like '%KETOAN%'</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

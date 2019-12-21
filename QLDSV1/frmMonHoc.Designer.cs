@@ -40,6 +40,7 @@
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaiLai = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaiLai1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -61,7 +62,11 @@
             this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dIEMTableAdapter = new QLDSV1.DSTableAdapters.DIEMTableAdapter();
-            this.btnTaiLai1 = new DevExpress.XtraBars.BarButtonItem();
+            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
+            this.qLDSVDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
+            this.tableAdapterManager1 = new QLDSV1.QLDSVDataSet1TableAdapters.TableAdapterManager();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -74,6 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dIEMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANH2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -189,6 +197,13 @@
             this.btnTaiLai.Name = "btnTaiLai";
             this.btnTaiLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai_ItemClick);
             // 
+            // btnTaiLai1
+            // 
+            this.btnTaiLai1.Caption = "Tải lại";
+            this.btnTaiLai1.Id = 7;
+            this.btnTaiLai1.Name = "btnTaiLai1";
+            this.btnTaiLai1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai1_ItemClick);
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -254,11 +269,14 @@
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DataSource = this.v_DS_PHANMANH2BindingSource;
+            this.cmbChiNhanh.DisplayMember = "TENKHOA";
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(357, 15);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(177, 25);
             this.cmbChiNhanh.TabIndex = 0;
+            this.cmbChiNhanh.ValueMember = "TENSERVER";
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // DS
@@ -366,14 +384,30 @@
             // 
             this.dIEMTableAdapter.ClearBeforeFill = true;
             // 
-            // btnTaiLai1
+            // qLDSVDataSet1
             // 
-            this.btnTaiLai1.Caption = "Tải lại";
-            this.btnTaiLai1.Id = 7;
-            this.btnTaiLai1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnTaiLai1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnTaiLai1.Name = "btnTaiLai1";
-            this.btnTaiLai1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai1_ItemClick);
+            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
+            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qLDSVDataSet1BindingSource
+            // 
+            this.qLDSVDataSet1BindingSource.DataSource = this.qLDSVDataSet1;
+            this.qLDSVDataSet1BindingSource.Position = 0;
+            // 
+            // v_DS_PHANMANH2BindingSource
+            // 
+            this.v_DS_PHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
+            this.v_DS_PHANMANH2BindingSource.DataSource = this.qLDSVDataSet1;
+            // 
+            // v_DS_PHANMANH2TableAdapter
+            // 
+            this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = QLDSV1.QLDSVDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmMonHoc
             // 
@@ -405,6 +439,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dIEMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANH2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +479,10 @@
         private DSTableAdapters.DIEMTableAdapter dIEMTableAdapter;
         private DevExpress.XtraEditors.TextEdit tENMHTextEdit;
         private DevExpress.XtraBars.BarButtonItem btnTaiLai1;
+        private QLDSVDataSet1 qLDSVDataSet1;
+        private System.Windows.Forms.BindingSource qLDSVDataSet1BindingSource;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANH2BindingSource;
+        private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
+        private QLDSVDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }
