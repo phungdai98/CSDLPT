@@ -61,7 +61,6 @@
             // 
             // cmbCN
             // 
-            this.cmbCN.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vDSPHANMANHBindingSource, "TENSERVER", true));
             this.cmbCN.DataSource = this.vDSPHANMANHBindingSource;
             this.cmbCN.DisplayMember = "TENKHOA";
             this.cmbCN.FormattingEnabled = true;

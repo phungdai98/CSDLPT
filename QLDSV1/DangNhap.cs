@@ -24,13 +24,13 @@ namespace QLDSV1
             //this.v_DS_PHANMANHTableAdapter1.Fill(this.qLDSVDataSet1.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.qLDSVDataSet.V_DS_PHANMANH);
-            string chuoiketnoi = "Data Source=VUDUONG;Initial Catalog=QLDSV;Integrated Security=True";
-            Program.conn.ConnectionString = chuoiketnoi;
-            Program.conn.Open();
-            DataTable dt = new DataTable();
-            dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
-            Program.bds_dspm.DataSource = dt;
-            cmbCN.DataSource = dt;
+            //string chuoiketnoi = "Data Source=VUDUONG;Initial Catalog=QLDSV;Integrated Security=True";
+            //Program.conn.ConnectionString = chuoiketnoi;
+            //Program.conn.Open();
+            //DataTable dt = new DataTable();
+            //dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
+            //Program.bds_dspm.DataSource = dt;
+            //cmbCN.DataSource = dt;
             cmbCN.DisplayMember = "TENPM";
             cmbCN.ValueMember = "TENSERVER";
             cmbCN.SelectedIndex = -1;
