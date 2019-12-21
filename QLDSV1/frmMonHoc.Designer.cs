@@ -49,11 +49,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
-            this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSVDataSet3 = new QLDSV1.QLDSVDataSet3();
-            this.v_DS_PHANMANHDAIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSVDataSet = new QLDSV1.QLDSVDataSet();
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLDSV1.QLDSVDataSet();
+            this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANHDAIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS = new QLDSV1.DS();
             this.bdsMonHoc = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
@@ -70,16 +69,14 @@
             this.v_DS_PHANMANHTableAdapter = new QLDSV1.QLDSVDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.tableAdapterManager1 = new QLDSV1.QLDSVDataSetTableAdapters.TableAdapterManager();
             this.v_DS_PHANMANHDAITableAdapter = new QLDSV1.QLDSVDataSetTableAdapters.V_DS_PHANMANHDAITableAdapter();
-            this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet3TableAdapters.V_DS_PHANMANH2TableAdapter();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHDAIBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHDAIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
@@ -275,7 +272,9 @@
             // 
             // cmbChiNhanh
             // 
-            this.cmbChiNhanh.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vDSPHANMANH2BindingSource, "TENSERVER", true));
+            this.cmbChiNhanh.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.v_DS_PHANMANHBindingSource, "TENSERVER", true));
+            this.cmbChiNhanh.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cmbChiNhanh.DisplayMember = "TENKHOA";
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(357, 15);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
@@ -283,30 +282,24 @@
             this.cmbChiNhanh.TabIndex = 0;
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
-            // vDSPHANMANH2BindingSource
+            // v_DS_PHANMANHBindingSource
             // 
-            this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
-            this.vDSPHANMANH2BindingSource.DataSource = this.qLDSVDataSet3;
-            // 
-            // qLDSVDataSet3
-            // 
-            this.qLDSVDataSet3.DataSetName = "QLDSVDataSet3";
-            this.qLDSVDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_DS_PHANMANHDAIBindingSource
-            // 
-            this.v_DS_PHANMANHDAIBindingSource.DataMember = "V_DS_PHANMANHDAI";
-            this.v_DS_PHANMANHDAIBindingSource.DataSource = this.qLDSVDataSet;
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // qLDSVDataSet
             // 
             this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
             this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // v_DS_PHANMANHBindingSource
+            // vDSPHANMANH2BindingSource
             // 
-            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.v_DS_PHANMANHBindingSource.DataSource = this.qLDSVDataSet;
+            this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
+            // 
+            // v_DS_PHANMANHDAIBindingSource
+            // 
+            this.v_DS_PHANMANHDAIBindingSource.DataMember = "V_DS_PHANMANHDAI";
+            this.v_DS_PHANMANHDAIBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // DS
             // 
@@ -427,10 +420,6 @@
             // 
             this.v_DS_PHANMANHDAITableAdapter.ClearBeforeFill = true;
             // 
-            // v_DS_PHANMANH2TableAdapter
-            // 
-            this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
-            // 
             // frmMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -452,11 +441,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHDAIBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHDAIBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
@@ -509,8 +497,8 @@
         private QLDSVDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.BindingSource v_DS_PHANMANHDAIBindingSource;
         private QLDSVDataSetTableAdapters.V_DS_PHANMANHDAITableAdapter v_DS_PHANMANHDAITableAdapter;
-        private QLDSVDataSet3 qLDSVDataSet3;
+        
         private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
-        private QLDSVDataSet3TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
+        
     }
 }

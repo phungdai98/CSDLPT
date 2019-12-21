@@ -52,7 +52,7 @@ namespace QLDSV1
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSVDataSet3.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet3.V_DS_PHANMANH2);
+         
             // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANHDAI' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHDAITableAdapter.Fill(this.qLDSVDataSet.V_DS_PHANMANHDAI);
             // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.

@@ -84,5 +84,7 @@ namespace QLDSV1.Properties {
                 return ((string)(this["QLDSVConnectionString4"]));
             }
         }
+
+        public string DS { get; internal set; }
     }
 }
