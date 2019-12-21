@@ -51,26 +51,18 @@ namespace QLDSV1
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSVDataSet3.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
-         
-            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANHDAI' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHDAITableAdapter.Fill(this.qLDSVDataSet.V_DS_PHANMANHDAI);
-            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Fill(this.qLDSVDataSet.V_DS_PHANMANH);
-
-            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.mONHOCTableAdapter.Fill(this.DS.MONHOC);
-            // TODO: This line of code loads data into the 'DS.DIEM' table. You can move, or remove it, as needed.
-            // TODO: This line of code loads data into the 'DS.DIEM' table. You can move, or remove it, as needed.
-            this.dIEMTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.dIEMTableAdapter.Fill(this.DS.DIEM);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
+            //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.mONHOCTableAdapter.Fill(this.DS.MONHOC);
+            //// TODO: This line of code loads data into the 'DS.DIEM' table. You can move, or remove it, as needed.
+            //// TODO: This line of code loads data into the 'DS.DIEM' table. You can move, or remove it, as needed.
+            //this.dIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.dIEMTableAdapter.Fill(this.DS.DIEM);
 
 
 
-            //chuoiketnoi = "Data Source=MAYTINH;Initial Catalog=QLDSV;Integrated Security=True";
+            //chuoiketnoi = "Data Source=VUDUONG;Initial Catalog=QLDSV;Integrated Security=True";
             //Program.conn.ConnectionString = chuoiketnoi;
             //Program.conn.Open();
             //DataTable dt = new DataTable();
@@ -78,6 +70,7 @@ namespace QLDSV1
             //cmbChiNhanh.DataSource = dt;
             cmbChiNhanh.DisplayMember = "TENKHOA";
             cmbChiNhanh.ValueMember = "TENSERVER";
+            cmbChiNhanh.SelectedIndex = -1;
             cmbChiNhanh.SelectedIndex = Program.mChinhanh;
             if (Program.mGroup == "PGV")
             {
@@ -96,29 +89,39 @@ namespace QLDSV1
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbChiNhanh.SelectedValue.ToString() != "System.Data.DataRowView")
-            {             
-                Program.servername = cmbChiNhanh.SelectedValue.ToString();
-            }
-            if (cmbChiNhanh.SelectedIndex == Program.mChinhanh)
+            //if (cmbChiNhanh.SelectedValue.ToString() != "System.Data.DataRowView")
+            //{             
+            //    Program.servername = cmbChiNhanh.SelectedValue.ToString();
+            //}
+            if (Program.mGroup.Equals("PGV"))
             {
-                
-                Program.mlogin = Program.mloginDN;
-                Program.password = Program.passwordDN;
-
-            }
-            if (cmbChiNhanh.SelectedIndex != Program.mChinhanh && Program.mGroup == "PGV")
+                try
                 {
-                    
-                    Program.mlogin = Program.remotelogin;
-                    Program.password = Program.remotepassword;
+                    Program.servername = cmbChiNhanh.SelectedValue.ToString();
+                    if (Program.servername.Equals(Program.tenServerDN))
+                    {
+                        Program.mlogin = Program.mloginDN;
+                        Program.password = Program.passwordDN;
+                        DataConnection dc = new DataConnection();
+                        
+                    }
+                    else
+                    {
+                        Program.mlogin = Program.remotelogin;
+                        Program.password = Program.remotepassword;
+                        DataConnection dc = new DataConnection();
+                        
+                    }
 
                 }
-                //else
-                //{
-                //    MessageBox.Show("Login này không có quyền truy cập dữ liệu của Khoa khác.", "", MessageBoxButtons.OK);
-                //}
-            
+                catch (Exception)
+                {
+
+
+                }
+            }
+            stack.Clear();
+
             if (Program.KetNoi() == 0)
             {
                 MessageBox.Show("Loi ket noi.", "Thông báo", MessageBoxButtons.OK);

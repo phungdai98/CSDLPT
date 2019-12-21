@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClass));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
@@ -53,7 +52,6 @@
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.txtTenLop = new System.Windows.Forms.TextBox();
             this.txtMaKhoa = new System.Windows.Forms.TextBox();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.cmb1 = new System.Windows.Forms.ComboBox();
             this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
@@ -72,7 +70,6 @@
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -91,14 +88,6 @@
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // bar2
             // 
@@ -194,7 +183,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1009, 53);
+            this.barDockControlTop.Size = new System.Drawing.Size(1009, 24);
             // 
             // barDockControlBottom
             // 
@@ -208,17 +197,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 352);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 381);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1009, 53);
+            this.barDockControlRight.Location = new System.Drawing.Point(1009, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 352);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 381);
             // 
             // dataGridView1
             // 
@@ -280,12 +269,6 @@
             this.txtMaKhoa.Size = new System.Drawing.Size(100, 21);
             this.txtMaKhoa.TabIndex = 11;
             // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 385);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1009, 20);
-            // 
             // cmb1
             // 
             this.cmb1.DataSource = this.vDSPHANMANH2BindingSource;
@@ -332,7 +315,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 430);
             this.Controls.Add(this.cmb1);
-            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.txtMaKhoa);
             this.Controls.Add(this.txtTenLop);
             this.Controls.Add(this.txtMaLop);
@@ -361,7 +343,6 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -380,7 +361,6 @@
         private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarHeaderItem notice;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarHeaderItem notice2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private System.Windows.Forms.ComboBox cmb1;

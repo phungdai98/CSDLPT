@@ -12,7 +12,7 @@ namespace QLDSV1.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,7 +26,7 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH;Initial Catalog=QLDSV;User ID=sa;Password=mixaolanot123")]
         public string QLDSVConnectionString {
             get {
                 return ((string)(this["QLDSVConnectionString"]));
@@ -36,7 +36,8 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR1;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERONE;Initial Catalog=QLDSV;User ID=sa;Password=mixaolano" +
+            "t123")]
         public string QLDSVConnectionString1 {
             get {
                 return ((string)(this["QLDSVConnectionString1"]));
@@ -46,7 +47,7 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR2;User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERTWO;User ID=sa;Password=mixaolanot123")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -56,7 +57,8 @@ namespace QLDSV1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUDUONG\\SVR2;Initial Catalog=QLDSV;User ID=sa;Password=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERTWO;Initial Catalog=QLDSV;User ID=sa;Password=mixaolano" +
+            "t123")]
         public string QLDSVConnectionString2 {
             get {
                 return ((string)(this["QLDSVConnectionString2"]));
@@ -84,7 +86,27 @@ namespace QLDSV1.Properties {
                 return ((string)(this["QLDSVConnectionString4"]));
             }
         }
-
-        public string DS { get; internal set; }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERONE;Initial Catalog=QLDSV;Persist Security Info=True;Us" +
+            "er ID=sa")]
+        public string DS {
+            get {
+                return ((string)(this["DS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAYTINH\\SERVERTHREE;Initial Catalog=QLDSV;Persist Security Info=True;" +
+            "User ID=vxthe;Password=123")]
+        public string QLDSVConnectionString5 {
+            get {
+                return ((string)(this["QLDSVConnectionString5"]));
+            }
+        }
     }
 }

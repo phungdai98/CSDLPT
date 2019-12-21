@@ -24,13 +24,13 @@ namespace QLDSV1
             //this.v_DS_PHANMANHTableAdapter1.Fill(this.qLDSVDataSet1.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'qLDSVDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.qLDSVDataSet.V_DS_PHANMANH);
-            string chuoiketnoi = "Data Source=MAYTINH;Initial Catalog=QLDSV;Integrated Security=True";
-            Program.conn.ConnectionString = chuoiketnoi;
-            Program.conn.Open();
-            DataTable dt = new DataTable();
-            dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
-            Program.bds_dspm.DataSource = dt;
-            cmbCN.DataSource = dt;
+            //string chuoiketnoi = "Data Source=VUDUONG;Initial Catalog=QLDSV;Integrated Security=True";
+            //Program.conn.ConnectionString = chuoiketnoi;
+            //Program.conn.Open();
+            //DataTable dt = new DataTable();
+            //dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
+            //Program.bds_dspm.DataSource = dt;
+            //cmbCN.DataSource = dt;
             cmbCN.DisplayMember = "TENPM";
             cmbCN.ValueMember = "TENSERVER";
             cmbCN.SelectedIndex = -1;
@@ -92,7 +92,7 @@ namespace QLDSV1
                 fm.Show();
                 //this.Close(); // closes the Form2 instance.
             }
-            if (String.Equals(Program.mGroup, "PKeToan"))
+            if (String.Equals(Program.mGroup, "PKETOAN"))
             {
                 frmPhongKeToan hocphi = new frmPhongKeToan(); // Instantiate a Form3 object.
                 hocphi.Show(); // Show Form3 and
@@ -106,6 +106,11 @@ namespace QLDSV1
         private void thoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

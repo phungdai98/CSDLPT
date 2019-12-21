@@ -11,7 +11,7 @@
     <Shape ID="DesignTable:KHOA" ZOrder="11" X="581" Y="535" Height="115" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:LOP" ZOrder="10" X="343" Y="535" Height="134" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:MONHOC" ZOrder="9" X="589" Y="312" Height="115" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:SINHVIEN" ZOrder="8" X="70" Y="70" Height="267" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="216" />
+    <Shape ID="DesignTable:SINHVIEN" ZOrder="8" X="70" Y="70" Height="267" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:HOCPHI" ZOrder="7" X="343" Y="70" Height="172" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
   <Connectors>
@@ -19,11 +19,11 @@
       <RoutePoints>
         <Point>
           <X>273</X>
-          <Y>145</Y>
+          <Y>156</Y>
         </Point>
         <Point>
           <X>343</X>
-          <Y>145</Y>
+          <Y>156</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -42,16 +42,12 @@
     <Connector ID="DesignRelation:FK_DIEM_SINHVIEN" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>248</X>
-          <Y>337</Y>
-        </Point>
-        <Point>
-          <X>248</X>
-          <Y>345</Y>
+          <X>273</X>
+          <Y>324</Y>
         </Point>
         <Point>
           <X>343</X>
-          <Y>345</Y>
+          <Y>324</Y>
         </Point>
       </RoutePoints>
     </Connector>
