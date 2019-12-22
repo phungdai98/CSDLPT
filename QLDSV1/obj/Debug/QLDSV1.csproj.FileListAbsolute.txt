@@ -528,3 +528,4 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\es\DevExpress.Diagram.v19.1.Core.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.resources.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.BangDiemSV.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formReportBangDiem.resources
