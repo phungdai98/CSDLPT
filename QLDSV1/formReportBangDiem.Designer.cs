@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbkhoa = new System.Windows.Forms.ComboBox();
+            this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
             this.cmbTenLop = new System.Windows.Forms.ComboBox();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new QLDSV1.DS();
@@ -42,18 +44,35 @@
             this.lOPTableAdapter = new QLDSV1.DSTableAdapters.LOPTableAdapter();
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbkhoa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(513, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbkhoa.DataSource = this.vDSPHANMANH2BindingSource;
+            this.cmbkhoa.DisplayMember = "TENKHOA";
+            this.cmbkhoa.FormattingEnabled = true;
+            this.cmbkhoa.Location = new System.Drawing.Point(513, 12);
+            this.cmbkhoa.Name = "cmbkhoa";
+            this.cmbkhoa.Size = new System.Drawing.Size(121, 21);
+            this.cmbkhoa.TabIndex = 0;
+            this.cmbkhoa.ValueMember = "TENSERVER";
+            this.cmbkhoa.SelectedIndexChanged += new System.EventHandler(this.Cmbkhoa_SelectedIndexChanged);
+            // 
+            // vDSPHANMANH2BindingSource
+            // 
+            this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
+            this.vDSPHANMANH2BindingSource.DataSource = this.qLDSVDataSet1;
+            // 
+            // qLDSVDataSet1
+            // 
+            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
+            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbTenLop
             // 
@@ -143,11 +162,15 @@
             this.simpleButton1.Text = "IN";
             this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
+            // v_DS_PHANMANH2TableAdapter
+            // 
+            this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
+            // 
             // formReportBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 301);
+            this.ClientSize = new System.Drawing.Size(857, 322);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -155,10 +178,12 @@
             this.Controls.Add(this.txtLan);
             this.Controls.Add(this.cmbMonHoc);
             this.Controls.Add(this.cmbTenLop);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbkhoa);
             this.Name = "formReportBangDiem";
             this.Text = "formReportBangDiem";
             this.Load += new System.EventHandler(this.FormReportBangDiem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
@@ -169,7 +194,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbkhoa;
         private System.Windows.Forms.ComboBox cmbTenLop;
         private System.Windows.Forms.ComboBox cmbMonHoc;
         private System.Windows.Forms.TextBox txtLan;
@@ -182,5 +207,8 @@
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private QLDSVDataSet1 qLDSVDataSet1;
+        private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
+        private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
     }
 }

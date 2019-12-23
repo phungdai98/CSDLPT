@@ -57,7 +57,7 @@ namespace QLDSV1
         }
         public bool InsertLop(Lop l)
         {
-            string sql = "INSERT INTO LOP(MALOP,TENLOP,MAKH) VALUES(@MALOP,@TENLOP,@MAKH)";
+            string sql = "INSERT INTO LOP(MALOP,TENLOP,MAKH) VALUES(REPLACE(@MALOP,' ',''),@TENLOP,@MAKH)";
             SqlConnection con = dc.getConnect();
             try
             {
