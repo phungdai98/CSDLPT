@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmbTenLop = new System.Windows.Forms.ComboBox();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new QLDSV1.DS();
             this.cmbMonHoc = new System.Windows.Forms.ComboBox();
+            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtLan = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new QLDSV1.DSTableAdapters.LOPTableAdapter();
-            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,12 @@
             this.cmbTenLop.Size = new System.Drawing.Size(121, 21);
             this.cmbTenLop.TabIndex = 1;
             this.cmbTenLop.ValueMember = "MALOP";
+            this.cmbTenLop.SelectedIndexChanged += new System.EventHandler(this.CmbTenLop_SelectedIndexChanged);
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.dS;
             // 
             // dS
             // 
@@ -81,6 +88,12 @@
             this.cmbMonHoc.Size = new System.Drawing.Size(121, 21);
             this.cmbMonHoc.TabIndex = 2;
             this.cmbMonHoc.ValueMember = "MAMH";
+            this.cmbMonHoc.SelectedIndexChanged += new System.EventHandler(this.CmbMonHoc_SelectedIndexChanged);
+            // 
+            // mONHOCBindingSource
+            // 
+            this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.dS;
             // 
             // txtLan
             // 
@@ -113,29 +126,29 @@
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Lần thi";
             // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.dS;
-            // 
             // lOPTableAdapter
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
-            // 
-            // mONHOCBindingSource
-            // 
-            this.mONHOCBindingSource.DataMember = "MONHOC";
-            this.mONHOCBindingSource.DataSource = this.dS;
             // 
             // mONHOCTableAdapter
             // 
             this.mONHOCTableAdapter.ClearBeforeFill = true;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(572, 139);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 42);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "IN";
+            this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
+            // 
             // formReportBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 268);
+            this.ClientSize = new System.Drawing.Size(774, 301);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -146,8 +159,8 @@
             this.Name = "formReportBangDiem";
             this.Text = "formReportBangDiem";
             this.Load += new System.EventHandler(this.FormReportBangDiem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,5 +181,6 @@
         private DSTableAdapters.LOPTableAdapter lOPTableAdapter;
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
