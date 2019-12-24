@@ -54,5 +54,12 @@ namespace QLDSV1
             mh.MdiParent = this;
             mh.Show();
         }
+
+        private void BarButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            formReportBangDiem frp = new formReportBangDiem();
+            frp.MdiParent = this;
+            frp.Show();
+        }
     }
 }

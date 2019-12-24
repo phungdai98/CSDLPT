@@ -263,10 +263,6 @@ namespace QLDSV1
             frm.Show();
         }
 
-        private void SimpleButton2_Click(object sender, EventArgs e)
-        {
-            formReportBangDiem frp = new formReportBangDiem();
-            frp.Show();
-        }
+       
     }
 }

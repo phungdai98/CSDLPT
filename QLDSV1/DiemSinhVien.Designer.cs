@@ -58,7 +58,6 @@
             this.monhocTableAdapter1 = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtmonhoc = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -313,21 +312,11 @@
             this.txtmonhoc.Size = new System.Drawing.Size(100, 20);
             this.txtmonhoc.TabIndex = 7;
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(93, 307);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 33);
-            this.simpleButton2.TabIndex = 25;
-            this.simpleButton2.Text = "Bảng Điểm";
-            this.simpleButton2.Click += new System.EventHandler(this.SimpleButton2_Click);
-            // 
             // DiemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 507);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmbDiem);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
@@ -390,6 +379,5 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private DevExpress.XtraEditors.CheckedComboBoxEdit txtmonhoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
