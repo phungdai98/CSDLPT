@@ -34,9 +34,9 @@ namespace QLDSV1
             }
             return true;
         }
-        public void ShowDanhSachSV(string malop)
+        public void ShowDanhSachSV(string malop,string mamh,int lanthi)
         {
-            DataTable dt = dal.getDanhSachSV(malop);
+            DataTable dt = dal.getDanhSachSV(malop,mamh,lanthi);
             tableDiem.DataSource = dt;
 
         }
@@ -55,7 +55,9 @@ namespace QLDSV1
             if(CheckData())
             {
                 string malop = txtlop.Text;
-                ShowDanhSachSV(malop);
+                string mamh = txtmonhoc.EditValue.ToString();
+                int lanthi = int.Parse(txtlanthi.Text);
+                ShowDanhSachSV(malop,mamh,lanthi);
                 btnSave.Enabled = false;
                 string notice = "" + Program.demrow;
             }

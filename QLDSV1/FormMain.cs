@@ -8,11 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using System.Data.SqlClient;
 
 namespace QLDSV1
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        DataConnection dc;
+        SqlDataAdapter da;
+        SqlCommand cmd;
         public FormMain()
         {
             InitializeComponent();
@@ -60,6 +64,19 @@ namespace QLDSV1
             formReportBangDiem frp = new formReportBangDiem();
             frp.MdiParent = this;
             frp.Show();
+        }
+
+        private void BarButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+
+        }
+
+        private void BarButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //formDSThiHetMon frp = new formDSThiHetMon();
+            //frp.MdiParent = this;
+            //frp.Show();
         }
     }
 }

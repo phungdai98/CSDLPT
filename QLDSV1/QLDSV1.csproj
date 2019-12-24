@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v19.1" />
     <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -82,6 +85,12 @@
     <Compile Include="BangDiemSV.Designer.cs">
       <DependentUpon>BangDiemSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="BangDiemTK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BangDiemTK.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BeanDiemSV.cs" />
     <Compile Include="BeanSinhVien.cs" />
     <Compile Include="DangNhap.cs">
@@ -110,6 +119,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSTHIHETMON.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSTHIHETMON.Designer.cs">
+      <DependentUpon>DSTHIHETMON.cs</DependentUpon>
     </Compile>
     <Compile Include="FormClass.cs">
       <SubType>Form</SubType>
@@ -174,11 +189,18 @@
     <EmbeddedResource Include="BangDiemSV.resx">
       <DependentUpon>BangDiemSV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BangDiemTK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BangDiemTK.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiemSinhVien.resx">
       <DependentUpon>DiemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSTHIHETMON.resx">
+      <DependentUpon>DSTHIHETMON.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClass.resx">
       <DependentUpon>FormClass.cs</DependentUpon>
@@ -265,6 +287,9 @@
     <None Include="QLDSVDataSet11.xss">
       <DependentUpon>QLDSVDataSet11.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

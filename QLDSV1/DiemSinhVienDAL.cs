@@ -18,9 +18,10 @@ namespace QLDSV1
         {
             dc = new DataConnection();
         }
-        public DataTable getDanhSachSV(string malop)
+        public DataTable getDanhSachSV(string malop,string mamh,int lanthi)
         {
-            string sql = "SELECT MASV,HOTEN=HO+''+TEN,DIEM FROM DANHSACH WHERE MALOP=" + "'" + malop + "'";
+            //string sql = "SELECT MASV,HOTEN=HO+''+TEN,DIEM FROM DANHSACH WHERE MALOP=" + "'" + malop + "'";
+            string sql = "EXEC SP_BDMH '" + malop + "','" + mamh + "'," + lanthi;
             SqlConnection con = dc.getConnect();
             da = new SqlDataAdapter(sql, con);
             con.Open();
