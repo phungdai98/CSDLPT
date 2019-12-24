@@ -74,9 +74,9 @@ namespace QLDSV1
 
         private void BarButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //formDSThiHetMon frp = new formDSThiHetMon();
-            //frp.MdiParent = this;
-            //frp.Show();
+            formDSThi frp = new formDSThi();
+            frp.MdiParent = this;
+            frp.Show();
         }
     }
 }

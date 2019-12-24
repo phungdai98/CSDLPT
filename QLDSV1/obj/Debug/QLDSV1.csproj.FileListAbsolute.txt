@@ -546,3 +546,7 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFac
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\stdole.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.DSTHIHETMON.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\AxShockwaveFlashObjects.dll
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\ShockwaveFlashObjects.dll
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formDSThi.resources
