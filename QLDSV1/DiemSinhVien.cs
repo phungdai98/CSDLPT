@@ -48,6 +48,10 @@ namespace QLDSV1
             btnSave.Enabled = false;
             cmbDiem.SelectedIndex = -1;
             cmbDiem.SelectedIndex = Program.temp;
+            if (Program.mGroup.Equals("KHOA"))
+            {
+                cmbDiem.Enabled = false;
+            }
         }
 
         private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -265,6 +269,9 @@ namespace QLDSV1
             frm.Show();
         }
 
-       
+        private void TableDiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

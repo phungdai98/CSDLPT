@@ -550,3 +550,4 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\AxShockwaveFlashObjects.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\CrystalDecisions.Windows.Forms.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\bin\Debug\ShockwaveFlashObjects.dll
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formDSThi.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmSinhVien.resources

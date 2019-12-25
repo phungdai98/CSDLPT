@@ -24,7 +24,7 @@ namespace QLDSV1
 
         private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SinhVien frm = new SinhVien();
+            frmSinhVien frm = new frmSinhVien();
             frm.MdiParent = this;
             frm.Show();
         }

@@ -193,6 +193,7 @@
             this.tableDiem.TabIndex = 4;
             this.tableDiem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.tableDiem.Click += new System.EventHandler(this.TableDiem_Click);
             // 
             // gridView1
             // 

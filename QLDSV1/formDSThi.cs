@@ -40,6 +40,10 @@ namespace QLDSV1
             cmbPhanManh.SelectedIndex = -1;
             cmbPhanManh.SelectedIndex = Program.temp;
             monhoc = cmbMon.SelectedValue.ToString();
+            if (Program.mGroup.Equals("KHOA"))
+            {
+                cmbPhanManh.Enabled = false;
+            }
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)

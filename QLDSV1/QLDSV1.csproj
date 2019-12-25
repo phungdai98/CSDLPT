@@ -87,12 +87,6 @@
     <Compile Include="BangDiemSV.Designer.cs">
       <DependentUpon>BangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="BangDiemTK.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BangDiemTK.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="BeanDiemSV.cs" />
     <Compile Include="BeanSinhVien.cs" />
     <Compile Include="DangNhap.cs">
@@ -172,6 +166,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPhongKeToan.Designer.cs" />
+    <Compile Include="frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSinhVien.designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lop.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="LopDAL.cs" />
@@ -187,6 +187,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="rptBangDiemTK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBangDiemTK.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,10 +202,6 @@
     <Compile Include="SinhVienDAL.cs" />
     <EmbeddedResource Include="BangDiemSV.resx">
       <DependentUpon>BangDiemSV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BangDiemTK.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BangDiemTK.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -230,6 +232,9 @@
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhongKeToan.resx" />
+    <EmbeddedResource Include="frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -241,6 +246,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptBangDiemTK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangDiemTK.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
     </EmbeddedResource>
