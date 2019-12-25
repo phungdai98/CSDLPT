@@ -40,11 +40,11 @@
             this.dS = new QLDSV1.DS();
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtlanthi = new System.Windows.Forms.TextBox();
             this.txtdiem = new System.Windows.Forms.TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtlanthi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.table_diem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
@@ -126,13 +126,6 @@
             this.simpleButton1.Text = "Kiem tra";
             this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
-            // txtlanthi
-            // 
-            this.txtlanthi.Location = new System.Drawing.Point(125, 255);
-            this.txtlanthi.Name = "txtlanthi";
-            this.txtlanthi.Size = new System.Drawing.Size(129, 21);
-            this.txtlanthi.TabIndex = 6;
-            // 
             // txtdiem
             // 
             this.txtdiem.Location = new System.Drawing.Point(398, 255);
@@ -166,16 +159,27 @@
             this.simpleButton2.Text = "Lưu lại";
             this.simpleButton2.Click += new System.EventHandler(this.SimpleButton2_Click);
             // 
+            // txtlanthi
+            // 
+            this.txtlanthi.FormattingEnabled = true;
+            this.txtlanthi.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtlanthi.Location = new System.Drawing.Point(125, 254);
+            this.txtlanthi.Name = "txtlanthi";
+            this.txtlanthi.Size = new System.Drawing.Size(121, 21);
+            this.txtlanthi.TabIndex = 11;
+            // 
             // formUpdateDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 408);
+            this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtdiem);
-            this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtmamh);
             this.Controls.Add(this.txtmasv);
@@ -206,10 +210,10 @@
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TextBox txtlanthi;
         private System.Windows.Forms.TextBox txtdiem;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private System.Windows.Forms.ComboBox txtlanthi;
     }
 }

@@ -68,8 +68,9 @@ namespace QLDSV1
 
         private void BarButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
-
+            frmBangDiemTK frp = new frmBangDiemTK();
+            frp.MdiParent = this;
+            frp.Show();
         }
 
         private void BarButtonItem6_ItemClick(object sender, ItemClickEventArgs e)

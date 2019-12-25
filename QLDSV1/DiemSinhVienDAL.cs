@@ -31,6 +31,8 @@ namespace QLDSV1
             con.Close();
             return dt;
         }
+        
+        
         public int checkDiemSV(string masv, string mamh, int lanthi)
         {
             string sql = "SELECT * FROM DIEM WHERE MASV=" + "'" + masv + "'" + " " + "AND MAMH=" + "'" + mamh + "'" + " " + "AND LAN=" + lanthi;
@@ -121,6 +123,20 @@ namespace QLDSV1
             }
 
 
+        }
+        //cái này của report
+        public DataTable getBangDiemTK(string malop)
+        {
+            //string sql = "SELECT MASV,HOTEN=HO+''+TEN,DIEM FROM DANHSACH WHERE MALOP=" + "'" + malop + "'";
+            string sql = "EXEC SP_BANGDIEMTONGKET " + "'" + malop + "'";
+            SqlConnection con = dc.getConnect();
+            da = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Program.demrow = dt.Rows.Count;
+            con.Close();
+            return dt;
         }
     }
 }

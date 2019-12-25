@@ -152,6 +152,12 @@
     <Compile Include="formUpdateDiem.Designer.cs">
       <DependentUpon>formUpdateDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBangDiemTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangDiemTK.Designer.cs">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDongHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formUpdateDiem.resx">
       <DependentUpon>formUpdateDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBangDiemTK.resx">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDongHocPhi.resx" />
     <EmbeddedResource Include="frmMonHoc.resx">

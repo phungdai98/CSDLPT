@@ -34,6 +34,15 @@ namespace QLDSV1
             }
             return true;
         }
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         public void ShowDanhSachSV(string malop,string mamh,int lanthi)
         {
             DataTable dt = dal.getDanhSachSV(malop,mamh,lanthi);
@@ -48,6 +57,7 @@ namespace QLDSV1
             btnSave.Enabled = false;
             cmbDiem.SelectedIndex = -1;
             cmbDiem.SelectedIndex = Program.temp;
+            simpleButton1.Enabled = false;
             if (Program.mGroup.Equals("KHOA"))
             {
                 cmbDiem.Enabled = false;
@@ -64,6 +74,7 @@ namespace QLDSV1
                 ShowDanhSachSV(malop,mamh,lanthi);
                 btnSave.Enabled = false;
                 string notice = "" + Program.demrow;
+                simpleButton1.Enabled = true;
             }
             
             //MessageBox.Show(notice);
@@ -142,8 +153,8 @@ namespace QLDSV1
 
                 MessageBox.Show("Lỗi");
             }
-            
-            
+           
+
         }
 
         private void SimpleButton1_Click(object sender, EventArgs e)

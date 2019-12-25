@@ -45,7 +45,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtlop = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtlanthi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -58,11 +57,11 @@
             this.monhocTableAdapter1 = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtmonhoc = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.txtlanthi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
@@ -216,14 +215,6 @@
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Lớp";
             // 
-            // txtlanthi
-            // 
-            this.txtlanthi.Location = new System.Drawing.Point(866, 29);
-            this.txtlanthi.MenuManager = this.barManager1;
-            this.txtlanthi.Name = "txtlanthi";
-            this.txtlanthi.Size = new System.Drawing.Size(100, 20);
-            this.txtlanthi.TabIndex = 8;
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(514, 36);
@@ -313,16 +304,27 @@
             this.txtmonhoc.Size = new System.Drawing.Size(100, 20);
             this.txtmonhoc.TabIndex = 7;
             // 
+            // txtlanthi
+            // 
+            this.txtlanthi.FormattingEnabled = true;
+            this.txtlanthi.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtlanthi.Location = new System.Drawing.Point(850, 28);
+            this.txtlanthi.Name = "txtlanthi";
+            this.txtlanthi.Size = new System.Drawing.Size(121, 21);
+            this.txtlanthi.TabIndex = 25;
+            // 
             // DiemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 507);
+            this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.cmbDiem);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtlop);
             this.Controls.Add(this.tableDiem);
@@ -339,7 +341,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
@@ -365,7 +366,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtlanthi;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtlop;
         private DevExpress.XtraBars.BarButtonItem btnSave;
@@ -380,5 +380,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private DevExpress.XtraEditors.CheckedComboBoxEdit txtmonhoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.ComboBox txtlanthi;
     }
 }

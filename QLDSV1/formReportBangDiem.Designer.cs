@@ -37,7 +37,6 @@
             this.dS = new QLDSV1.DS();
             this.cmbMonHoc = new System.Windows.Forms.ComboBox();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtLan = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -45,6 +44,7 @@
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
+            this.txtLan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
@@ -114,13 +114,6 @@
             this.mONHOCBindingSource.DataMember = "MONHOC";
             this.mONHOCBindingSource.DataSource = this.dS;
             // 
-            // txtLan
-            // 
-            this.txtLan.Location = new System.Drawing.Point(289, 207);
-            this.txtLan.Name = "txtLan";
-            this.txtLan.Size = new System.Drawing.Size(121, 21);
-            this.txtLan.TabIndex = 3;
-            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(179, 80);
@@ -166,16 +159,27 @@
             // 
             this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
             // 
+            // txtLan
+            // 
+            this.txtLan.FormattingEnabled = true;
+            this.txtLan.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtLan.Location = new System.Drawing.Point(289, 207);
+            this.txtLan.Name = "txtLan";
+            this.txtLan.Size = new System.Drawing.Size(121, 21);
+            this.txtLan.TabIndex = 8;
+            // 
             // formReportBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 322);
+            this.Controls.Add(this.txtLan);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtLan);
             this.Controls.Add(this.cmbMonHoc);
             this.Controls.Add(this.cmbTenLop);
             this.Controls.Add(this.cmbkhoa);
@@ -197,7 +201,6 @@
         private System.Windows.Forms.ComboBox cmbkhoa;
         private System.Windows.Forms.ComboBox cmbTenLop;
         private System.Windows.Forms.ComboBox cmbMonHoc;
-        private System.Windows.Forms.TextBox txtLan;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -210,5 +213,6 @@
         private QLDSVDataSet1 qLDSVDataSet1;
         private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
         private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
+        private System.Windows.Forms.ComboBox txtLan;
     }
 }
