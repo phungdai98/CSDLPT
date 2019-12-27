@@ -95,7 +95,7 @@ namespace QLDSV1
         private void Btnpreview_Click(object sender, EventArgs e)
         {
             rptBangDiemTK rpt = new rptBangDiemTK(malop);
-            
+            rpt.xrLop.Text = cmbLop.Text;
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
         }
