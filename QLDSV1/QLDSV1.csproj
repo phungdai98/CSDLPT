@@ -194,10 +194,10 @@
       <DependentUpon>QLDSVDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="rptBangDiemTK.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptBangDiemTK.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBangDiemTK.Designer.cs">
+      <DependentUpon>rptBangDiemTK.cs</DependentUpon>
     </Compile>
     <Compile Include="SinhVien.cs">
       <SubType>Form</SubType>
@@ -255,9 +255,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rptBangDiemTK.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptBangDiemTK.cs</LastGenOutput>
+    <EmbeddedResource Include="rptBangDiemTK.resx">
+      <DependentUpon>rptBangDiemTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>

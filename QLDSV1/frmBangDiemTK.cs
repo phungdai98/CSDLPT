@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace QLDSV1
 {
@@ -93,20 +94,10 @@ namespace QLDSV1
 
         private void Btnpreview_Click(object sender, EventArgs e)
         {
-            rptBangDiemTK obj;
-            obj = new rptBangDiemTK();
-
-            //string strLenh;
-            //strLenh = "EXEC SP_BANGDIEMTONGKET " + "'" + malop + "'";
-            DataTable MyTable = dal.getBangDiemTK(malop);
-            //tableDiem.DataSource = dt;
-            //gridtest.DataSource = MyTable;
-           
-            obj.SetDataSource(MyTable);
-            obj.SetParameterValue("malop", malop);
-
-            crptView.ReportSource = obj;
-
+            rptBangDiemTK rpt = new rptBangDiemTK(malop);
+            
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
     }
 }

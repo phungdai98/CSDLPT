@@ -470,7 +470,7 @@ SELECT MASV, NIENKHOA, HOCKY, HOCPHI, SOTIENDADONG FROM HOCPHI WHERE (HOCKY = @H
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_BANGDIEMTONGKETTableAdapter" GeneratorDataComponentClassName="SP_BANGDIEMTONGKETTableAdapter" Name="SP_BANGDIEMTONGKET" UserDataComponentName="SP_BANGDIEMTONGKETTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectName="QLDSV.dbo.SP_BANGDIEMTONGKET" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectName="QLDSV.dbo.SP_BANGDIEMTONGKET" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_BANGDIEMTONGKET</CommandText>
@@ -482,7 +482,12 @@ SELECT MASV, NIENKHOA, HOCKY, HOCPHI, SOTIENDADONG FROM HOCPHI WHERE (HOCKY = @H
                 </SelectCommand>
               </DbSource>
             </MainSource>
-            <Mappings />
+            <Mappings>
+              <Mapping SourceColumn="TENMH" DataSetColumn="TENMH" />
+              <Mapping SourceColumn="DIEM" DataSetColumn="DIEM" />
+              <Mapping SourceColumn="MASV" DataSetColumn="MASV" />
+              <Mapping SourceColumn="HOVATEN" DataSetColumn="HOVATEN" />
+            </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_DSTHIHETMONTableAdapter" GeneratorDataComponentClassName="SP_DSTHIHETMONTableAdapter" Name="SP_DSTHIHETMON" UserDataComponentName="SP_DSTHIHETMONTableAdapter">
@@ -760,6 +765,30 @@ SELECT MASV, NIENKHOA, HOCKY, HOCPHI, SOTIENDADONG FROM HOCPHI WHERE (HOCKY = @H
         </xs:element>
         <xs:element name="SP_BANGDIEMTONGKET" msprop:Generator_TableClassName="SP_BANGDIEMTONGKETDataTable" msprop:Generator_TableVarName="tableSP_BANGDIEMTONGKET" msprop:Generator_TablePropName="SP_BANGDIEMTONGKET" msprop:Generator_RowDeletingName="SP_BANGDIEMTONGKETRowDeleting" msprop:Generator_RowChangingName="SP_BANGDIEMTONGKETRowChanging" msprop:Generator_RowEvHandlerName="SP_BANGDIEMTONGKETRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_BANGDIEMTONGKETRowDeleted" msprop:Generator_UserTableName="SP_BANGDIEMTONGKET" msprop:Generator_RowChangedName="SP_BANGDIEMTONGKETRowChanged" msprop:Generator_RowEvArgName="SP_BANGDIEMTONGKETRowChangeEvent" msprop:Generator_RowClassName="SP_BANGDIEMTONGKETRow">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TENMH" msprop:Generator_ColumnVarNameInTable="columnTENMH" msprop:Generator_ColumnPropNameInRow="TENMH" msprop:Generator_ColumnPropNameInTable="TENMHColumn" msprop:Generator_UserColumnName="TENMH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIEM" msprop:Generator_ColumnVarNameInTable="columnDIEM" msprop:Generator_ColumnPropNameInRow="DIEM" msprop:Generator_ColumnPropNameInTable="DIEMColumn" msprop:Generator_UserColumnName="DIEM" type="xs:double" minOccurs="0" />
+              <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOVATEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOVATEN" msprop:Generator_ColumnPropNameInRow="HOVATEN" msprop:Generator_ColumnPropNameInTable="HOVATENColumn" msprop:Generator_UserColumnName="HOVATEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="51" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="SP_DSTHIHETMON" msprop:Generator_TableClassName="SP_DSTHIHETMONDataTable" msprop:Generator_TableVarName="tableSP_DSTHIHETMON" msprop:Generator_RowChangedName="SP_DSTHIHETMONRowChanged" msprop:Generator_TablePropName="SP_DSTHIHETMON" msprop:Generator_RowDeletingName="SP_DSTHIHETMONRowDeleting" msprop:Generator_RowChangingName="SP_DSTHIHETMONRowChanging" msprop:Generator_RowEvHandlerName="SP_DSTHIHETMONRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DSTHIHETMONRowDeleted" msprop:Generator_RowClassName="SP_DSTHIHETMONRow" msprop:Generator_UserTableName="SP_DSTHIHETMON" msprop:Generator_RowEvArgName="SP_DSTHIHETMONRowChangeEvent">
