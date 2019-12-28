@@ -184,6 +184,7 @@
     <Compile Include="frmSinhVien.designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginDAL.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="LopDAL.cs" />
