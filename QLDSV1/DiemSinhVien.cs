@@ -167,7 +167,7 @@ namespace QLDSV1
             int lanthi = int.Parse(txtlanthi.Text);
             string notice = "";
             string notice3 = "Các sinh viên sau đây đã có điểm môn " +mamh+" lần " + 1 +" nếu lưu lại điểm tự động chuyển lần 2  : ";
-            string notice1 = "Các sinh viên sau đây đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này";
+            string notice1 = "Các sinh viên sau đây đã có điểm môn " + mamh + " lần 1 và 2 nên sẽ không thể lưu sinh viên này : ";
             string notice2 = "Các sinh viên sau đây chưa có điểm lần 1 nếu lưu lại sẽ tự cập nhập lần 1 là 0 : ";
             for (int i = 0; i < Program.demrow; i++)
             {
@@ -234,8 +234,8 @@ namespace QLDSV1
             }
             if(dem== Program.demrow)
             {
-                if(lanthi==1) MessageBox.Show(notice1 + " " + notice3);
-                else if(lanthi==2) MessageBox.Show(notice1 + " " + notice2);
+                if(lanthi==1) MessageBox.Show(notice1 + "\n" + notice3);
+                else if(lanthi==2) MessageBox.Show(notice1 + "\n" + notice2);
 
                 btnSave.Enabled = true;
             }

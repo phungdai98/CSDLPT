@@ -146,6 +146,12 @@
     <Compile Include="formReportBangDiem.Designer.cs">
       <DependentUpon>formReportBangDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="formTaoLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTaoLogin.Designer.cs">
+      <DependentUpon>formTaoLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="formUpdateDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formReportBangDiem.resx">
       <DependentUpon>formReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formTaoLogin.resx">
+      <DependentUpon>formTaoLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUpdateDiem.resx">
       <DependentUpon>formUpdateDiem.cs</DependentUpon>

@@ -553,3 +553,4 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formDSThi.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmSinhVien.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmBangDiemTK.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.rptBangDiemTK.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formTaoLogin.resources

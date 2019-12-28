@@ -42,12 +42,12 @@
             this.dS = new QLDSV1.DS();
             this.cmbMon = new System.Windows.Forms.ComboBox();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtLan = new System.Windows.Forms.TextBox();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
             this.lOPTableAdapter = new QLDSV1.DSTableAdapters.LOPTableAdapter();
             this.mONHOCTableAdapter = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtLan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
@@ -150,13 +150,6 @@
             this.mONHOCBindingSource.DataMember = "MONHOC";
             this.mONHOCBindingSource.DataSource = this.dS;
             // 
-            // txtLan
-            // 
-            this.txtLan.Location = new System.Drawing.Point(176, 251);
-            this.txtLan.Name = "txtLan";
-            this.txtLan.Size = new System.Drawing.Size(121, 21);
-            this.txtLan.TabIndex = 8;
-            // 
             // txtNgay
             // 
             this.txtNgay.EditValue = null;
@@ -194,13 +187,24 @@
             this.simpleButton1.Text = "In";
             this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
+            // txtLan
+            // 
+            this.txtLan.FormattingEnabled = true;
+            this.txtLan.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtLan.Location = new System.Drawing.Point(176, 251);
+            this.txtLan.Name = "txtLan";
+            this.txtLan.Size = new System.Drawing.Size(121, 21);
+            this.txtLan.TabIndex = 10;
+            // 
             // formDSThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 394);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtLan);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmbMon);
             this.Controls.Add(this.cmbLop);
             this.Controls.Add(this.labelControl4);
@@ -233,7 +237,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.ComboBox cmbLop;
         private System.Windows.Forms.ComboBox cmbMon;
-        private System.Windows.Forms.TextBox txtLan;
         private QLDSVDataSet1 qLDSVDataSet1;
         private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
         private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
@@ -244,5 +247,6 @@
         private DSTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraEditors.DateEdit txtNgay;
+        private System.Windows.Forms.ComboBox txtLan;
     }
 }

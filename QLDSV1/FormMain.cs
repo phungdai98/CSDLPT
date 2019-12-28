@@ -79,5 +79,12 @@ namespace QLDSV1
             frp.MdiParent = this;
             frp.Show();
         }
+
+        private void BarButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            formTaoLogin frp = new formTaoLogin();
+            frp.MdiParent = this;
+            frp.Show();
+        }
     }
 }
