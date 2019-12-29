@@ -167,7 +167,9 @@
     <Compile Include="frmDongHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDongHocPhi.Designer.cs" />
+    <Compile Include="frmDongHocPhi.designer.cs">
+      <DependentUpon>frmDongHocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,7 +248,9 @@
     <EmbeddedResource Include="frmBangDiemTK.resx">
       <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDongHocPhi.resx" />
+    <EmbeddedResource Include="frmDongHocPhi.resx">
+      <DependentUpon>frmDongHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>

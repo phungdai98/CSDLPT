@@ -37,6 +37,11 @@ namespace QLDSV1
             comboNhom.SelectedIndex = 0;
             cmbPhanManh.SelectedIndex = -1;
             cmbPhanManh.SelectedIndex = Program.temp;
+            if (Program.mGroup.Equals("KHOA"))
+            {
+                cmbPhanManh.Enabled = false;
+                comboNhom.Enabled = false;
+            }
         }
 
         private void CmbPhanManh_SelectedIndexChanged(object sender, EventArgs e)
