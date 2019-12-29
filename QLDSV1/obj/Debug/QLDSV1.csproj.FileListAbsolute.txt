@@ -330,7 +330,6 @@ C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmDongHocPhi.resources
 C:\Users\COMPUTER\Desktop\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmPhongKeToan.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmDongHocPhi.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmMonHoc.resources
-G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmPhongKeToan.resources
 D:\CSDLPT\CSDLPT\QLDSV1\bin\Debug\QLDSV1.exe.config
 D:\CSDLPT\CSDLPT\QLDSV1\bin\Debug\QLDSV1.exe
 D:\CSDLPT\CSDLPT\QLDSV1\bin\Debug\QLDSV1.pdb
@@ -554,3 +553,11 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmSinhVien.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmBangDiemTK.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.rptBangDiemTK.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.formTaoLogin.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmPhongKeToan.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmChuyenLop.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.XtraReportInDSSV.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmInDanhSachSV.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmInPhieuDiem.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.XtraReportInPhieuDiem.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmInHocPhi.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.XtraReportInHocPhi.resources

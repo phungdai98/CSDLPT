@@ -21,26 +21,50 @@ namespace QLDSV1
         {
             InitializeComponent();
         }
-
+        private Form CheckExists(Type ftype)//kiem tra form da mo chua
+        {
+            foreach (Form f in this.MdiChildren)
+                if (f.GetType() == ftype)
+                    return f;
+            return null;
+        }
         private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmSinhVien frm = new frmSinhVien();
-            frm.MdiParent = this;
-            frm.Show();
+            Form frm = this.CheckExists(typeof(frmSinhVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmSinhVien f = new frmSinhVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+              
         }
 
         private void BarButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormClass fcl = new FormClass();
-            fcl.MdiParent = this;
-            fcl.Show();
+            Form frm = this.CheckExists(typeof(FormClass));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormClass fcl = new FormClass();
+                fcl.MdiParent = this;
+                fcl.Show();
+            }
+               
         }
 
         private void BarButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DiemSinhVien dsv = new DiemSinhVien();
-            dsv.MdiParent = this;
-            dsv.Show();
+            Form frm = this.CheckExists(typeof(DiemSinhVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                DiemSinhVien dsv = new DiemSinhVien();
+                dsv.MdiParent = this;
+                dsv.Show();
+            }
+               
             
         }
 
@@ -54,37 +78,102 @@ namespace QLDSV1
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
             //btnMonHoc
-            frmMonHoc mh = new frmMonHoc();
-            mh.MdiParent = this;
-            mh.Show();
+            Form frm = this.CheckExists(typeof(frmMonHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmMonHoc mh = new frmMonHoc();
+                mh.MdiParent = this;
+                mh.Show();
+            }
+                
         }
 
         private void BarButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            formReportBangDiem frp = new formReportBangDiem();
-            frp.MdiParent = this;
-            frp.Show();
+            Form frm = this.CheckExists(typeof(formReportBangDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                formReportBangDiem frp = new formReportBangDiem();
+                frp.MdiParent = this;
+                frp.Show();
+            }
+                
         }
 
         private void BarButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmBangDiemTK frp = new frmBangDiemTK();
-            frp.MdiParent = this;
-            frp.Show();
+            Form frm = this.CheckExists(typeof(frmBangDiemTK));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmBangDiemTK frp = new frmBangDiemTK();
+                frp.MdiParent = this;
+                frp.Show();
+            }
+                
         }
 
         private void BarButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            formDSThi frp = new formDSThi();
-            frp.MdiParent = this;
-            frp.Show();
+            Form frm = this.CheckExists(typeof(formDSThi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                formDSThi frp = new formDSThi();
+                frp.MdiParent = this;
+                frp.Show();
+            }
         }
 
         private void BarButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
-            formTaoLogin frp = new formTaoLogin();
-            frp.MdiParent = this;
-            frp.Show();
+            Form frm = this.CheckExists(typeof(formTaoLogin));
+            if (frm != null) frm.Activate();
+            else
+            {
+                formTaoLogin frp = new formTaoLogin();
+                frp.MdiParent = this;
+                frp.Show();
+            }
+        }
+
+        private void BarButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmChuyenLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmChuyenLop frp = new frmChuyenLop();
+                frp.MdiParent = this;
+                frp.Show();
+            }
+        }
+
+        private void BarButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmInDanhSachSV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmInDanhSachSV frp = new frmInDanhSachSV();
+                frp.MdiParent = this;
+                frp.Show();
+            }
+        }
+
+
+        private void BarButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmInPhieuDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmInPhieuDiem frp = new frmInPhieuDiem();
+                frp.MdiParent = this;
+                frp.Show();
+            }
         }
     }
 }

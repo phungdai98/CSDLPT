@@ -164,22 +164,48 @@
     <Compile Include="frmBangDiemTK.Designer.cs">
       <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChuyenLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuyenLop.designer.cs">
+      <DependentUpon>frmChuyenLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDongHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDongHocPhi.designer.cs">
       <DependentUpon>frmDongHocPhi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDanhSachSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDanhSachSV.designer.cs">
+      <DependentUpon>frmInDanhSachSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInHocPhi.designer.cs">
+      <DependentUpon>frmInHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInPhieuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInPhieuDiem.designer.cs">
+      <DependentUpon>frmInPhieuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMonHoc.Designer.cs">
+    <Compile Include="frmMonHoc.designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhongKeToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhongKeToan.Designer.cs" />
+    <Compile Include="frmPhongKeToan.designer.cs">
+      <DependentUpon>frmPhongKeToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +241,24 @@
       <DependentUpon>SinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="SinhVienDAL.cs" />
+    <Compile Include="XtraReportInDSSV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportInDSSV.designer.cs">
+      <DependentUpon>XtraReportInDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportInHocPhi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportInHocPhi.designer.cs">
+      <DependentUpon>XtraReportInHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportInPhieuDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportInPhieuDiem.designer.cs">
+      <DependentUpon>XtraReportInPhieuDiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BangDiemSV.resx">
       <DependentUpon>BangDiemSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,13 +292,27 @@
     <EmbeddedResource Include="frmBangDiemTK.resx">
       <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChuyenLop.resx">
+      <DependentUpon>frmChuyenLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDongHocPhi.resx">
       <DependentUpon>frmDongHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDanhSachSV.resx">
+      <DependentUpon>frmInDanhSachSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInHocPhi.resx">
+      <DependentUpon>frmInHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInPhieuDiem.resx">
+      <DependentUpon>frmInPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhongKeToan.resx" />
+    <EmbeddedResource Include="frmPhongKeToan.resx">
+      <DependentUpon>frmPhongKeToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +332,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SinhVien.resx">
       <DependentUpon>SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportInDSSV.resx">
+      <DependentUpon>XtraReportInDSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportInHocPhi.resx">
+      <DependentUpon>XtraReportInHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportInPhieuDiem.resx">
+      <DependentUpon>XtraReportInPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DataSet1.xsc">

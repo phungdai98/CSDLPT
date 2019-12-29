@@ -15,7 +15,6 @@ namespace QLDSV1
     public partial class frmMonHoc : Form
     {
         int vitri;
-        string chuoiketnoi;
         int chucnang = 0;// xac dinh them, xoa, sua
         string mamh_edit = "";
         string tenmh_edit="";
@@ -51,8 +50,12 @@ namespace QLDSV1
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
+            // TODO: This line of code loads data into the 'DS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Fill(this.DS.V_DS_PHANMANH);
+
+            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
+
+            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
             //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             //this.mONHOCTableAdapter.Fill(this.DS.MONHOC);
             //// TODO: This line of code loads data into the 'DS.DIEM' table. You can move, or remove it, as needed.
@@ -67,7 +70,8 @@ namespace QLDSV1
             //Program.conn.Open();
             //DataTable dt = new DataTable();
             //dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH where TENKHOA not like '%KT%'");
-            //cmbChiNhanh.DataSource = dt;
+
+           // cmbChiNhanh.DataSource = dt;
             cmbChiNhanh.DisplayMember = "TENKHOA";
             cmbChiNhanh.ValueMember = "TENSERVER";
             cmbChiNhanh.SelectedIndex = -1;
@@ -79,6 +83,7 @@ namespace QLDSV1
             else
             {
                 cmbChiNhanh.Enabled = false;
+                btnGhi.Enabled = btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             }
             groupBox1.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = btnTaiLai.Enabled = false;
@@ -89,10 +94,7 @@ namespace QLDSV1
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cmbChiNhanh.SelectedValue.ToString() != "System.Data.DataRowView")
-            //{             
-            //    Program.servername = cmbChiNhanh.SelectedValue.ToString();
-            //}
+           
             if (Program.mGroup.Equals("PGV"))
             {
                 try
@@ -103,14 +105,14 @@ namespace QLDSV1
                         Program.mlogin = Program.mloginDN;
                         Program.password = Program.passwordDN;
                         DataConnection dc = new DataConnection();
-                        
+
                     }
                     else
                     {
                         Program.mlogin = Program.remotelogin;
                         Program.password = Program.remotepassword;
                         DataConnection dc = new DataConnection();
-                        
+
                     }
 
                 }
@@ -120,21 +122,28 @@ namespace QLDSV1
 
                 }
             }
-            stack.Clear();
 
             if (Program.KetNoi() == 0)
             {
                 MessageBox.Show("Loi ket noi.", "Thông báo", MessageBoxButtons.OK);
-                
+
             }
             else
             {
-                
+                stack.Clear();
                 this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.mONHOCTableAdapter.Fill(this.DS.MONHOC);
                 this.dIEMTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.dIEMTableAdapter.Fill(this.DS.DIEM);
 
+            }
+            if (stack.Count > 0)
+            {
+                btnPhucHoi.Enabled = true;
+            }
+            else
+            {
+                btnPhucHoi.Enabled = false;
             }
 
         }
@@ -169,7 +178,7 @@ namespace QLDSV1
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (Program.myReader != null) Program.myReader.Close();
-            String strLenh = "Select TOP 1 MAMH from LINK0.QLDSV.dbo.DIEM where MAMH = '" + mAMHTextEdit.Text.Trim() + "'";
+            String strLenh = "exec SP_TIMDIEMTUMAMONHOC @mamh= '" + mAMHTextEdit.Text.Trim() + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             check = Program.myReader.Read();
             chucnang = 2;
@@ -181,6 +190,7 @@ namespace QLDSV1
             btnPhucHoi.Enabled = btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnTaiLai1.Enabled = false;
             btnGhi.Enabled = btnTaiLai.Enabled=true;
             mONHOCGridControl.Enabled = false;
+            mAMHTextEdit.Enabled = false;
             Program.myReader.Close();
         }
 
@@ -198,7 +208,7 @@ namespace QLDSV1
             }
 
             if (Program.myReader != null) Program.myReader.Close();
-            String strLenh = "Select TOP 1 MAMH from LINK0.QLDSV.dbo.MONHOC where MAMH = '"+ mAMHTextEdit.Text.Trim() +"'";
+            String strLenh = "Select TOP 1 MAMH from MONHOC where MAMH = '"+ mAMHTextEdit.Text.Trim() +"'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (chucnang == 1)//them
             {                       
@@ -262,6 +272,7 @@ namespace QLDSV1
                 btnTaiLai1.Enabled = true;
                 btnGhi.Enabled = btnTaiLai.Enabled = false; 
                 mONHOCGridControl.Enabled = true;
+                mAMHTextEdit.Enabled = true;
                 cmbChiNhanh.Enabled = true;
                 if (stack.Count > 0)
                 {
@@ -343,6 +354,7 @@ namespace QLDSV1
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
             btnTaiLai1.Enabled = true;
             btnGhi.Enabled = btnTaiLai.Enabled=false;
+            mAMHTextEdit.Enabled = true;
             mONHOCGridControl.Enabled = true;
             if (stack.Count > 0)
             {
@@ -362,7 +374,7 @@ namespace QLDSV1
             chucnang = 3;
             bool check_xoa = true;
             if (Program.myReader!=null) Program.myReader.Close();
-            String strLenh = "Select TOP 1 MAMH from LINK0.QLDSV.dbo.DIEM where MAMH = '" + mAMHTextEdit.Text.Trim() + "'";
+            String strLenh = "exec SP_TIMDIEMTUMAMONHOC @mamh= '" + mAMHTextEdit.Text.Trim() + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader.Read())
             {
