@@ -44,28 +44,20 @@ namespace QLDSV1
             con.Close();
             return dt.Rows.Count;
         }
-        public void InsertDiem(BeanDiemSV dsv)
+        public void InsertDiem(BeanDiemSV dsv, SqlConnection con,SqlTransaction t)
         {
             string sql = "INSERT INTO DIEM(MASV,MAMH,LAN,DIEM) VALUES(@MASV,@MAMH,@LAN,@DIEM)";
-            SqlConnection con = dc.getConnect();
-            try
-            {
-                cmd = new SqlCommand(sql, con);
-                con.Open();
+            //SqlConnection con = dc.getConnect();
+            
+                cmd = new SqlCommand(sql, con,t);
+                //con.Open();
                 cmd.Parameters.Add("@MASV", SqlDbType.NChar).Value = dsv.MASV;
                 cmd.Parameters.Add("@MAMH", SqlDbType.NChar).Value = dsv.MAMH;
                 cmd.Parameters.Add("@LAN", SqlDbType.SmallInt).Value = dsv.LANTHI;
                 cmd.Parameters.Add("@DIEM", SqlDbType.Float).Value = dsv.DIEM;
                 cmd.ExecuteNonQuery();
                 //con.Close();
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Lỗi trùng khóa chính hoặc khóa duy nhất");
-               
-            }
-           
+            
 
         }
         public DataTable getdIEM(String masv,string mamh)
