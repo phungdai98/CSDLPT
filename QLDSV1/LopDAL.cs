@@ -33,9 +33,31 @@ namespace QLDSV1
             con.Close();
             return dt;
         }
+        public int CheckMaLop(string malop)
+        {
+            string sql = "SELECT * FROM LINK0.QLDSV.dbo.LOP WHERE MALOP=" + "'" + malop + "'";
+            SqlConnection con = dc.getConnect();
+            da = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt.Rows.Count;
+        }
+        public int checkDeleteLop(string malop)
+        {
+            string sql = "SELECT MASV,HO,TEN,MALOP,PHAI,NGAYSINH,NOISINH,DIACHI,GHICHU,NGHIHOC FROM SINHVIEN WHERE MALOP='" + malop + "'";
+            SqlConnection con = dc.getConnect();
+            da = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt.Rows.Count;
+        }
         public bool InsertLop(Lop l)
         {
-            string sql = "INSERT INTO LOP(MALOP,TENLOP,MAKH) VALUES(@MALOP,@TENLOP,@MAKH)";
+            string sql = "INSERT INTO LOP(MALOP,TENLOP,MAKH) VALUES(REPLACE(@MALOP,' ',''),@TENLOP,@MAKH)";
             SqlConnection con = dc.getConnect();
             try
             {

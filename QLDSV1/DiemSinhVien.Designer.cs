@@ -35,6 +35,7 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -44,23 +45,28 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtlop = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtmonhoc = new DevExpress.XtraEditors.TextEdit();
-            this.txtlanthi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmbDiem = new System.Windows.Forms.ComboBox();
-            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
             this.vDSPHANMANH2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet1 = new QLDSV1.QLDSVDataSet1();
             this.v_DS_PHANMANH2TableAdapter = new QLDSV1.QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter();
+            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ds1 = new QLDSV1.DS();
+            this.monhocTableAdapter1 = new QLDSV1.DSTableAdapters.MONHOCTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtmonhoc = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.txtlanthi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -76,9 +82,10 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.btnSave});
+            this.btnSave,
+            this.barButtonItem2});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 3;
+            this.barManager1.MaxItemId = 4;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -97,7 +104,8 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSave, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSave, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -119,6 +127,15 @@
             this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sửa điểm";
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick_1);
             // 
             // bar3
             // 
@@ -175,6 +192,7 @@
             this.tableDiem.TabIndex = 4;
             this.tableDiem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.tableDiem.Click += new System.EventHandler(this.TableDiem_Click);
             // 
             // gridView1
             // 
@@ -196,22 +214,6 @@
             this.labelControl1.Size = new System.Drawing.Size(17, 13);
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Lớp";
-            // 
-            // txtmonhoc
-            // 
-            this.txtmonhoc.Location = new System.Drawing.Point(601, 33);
-            this.txtmonhoc.MenuManager = this.barManager1;
-            this.txtmonhoc.Name = "txtmonhoc";
-            this.txtmonhoc.Size = new System.Drawing.Size(100, 20);
-            this.txtmonhoc.TabIndex = 7;
-            // 
-            // txtlanthi
-            // 
-            this.txtlanthi.Location = new System.Drawing.Point(866, 29);
-            this.txtlanthi.MenuManager = this.barManager1;
-            this.txtlanthi.Name = "txtlanthi";
-            this.txtlanthi.Size = new System.Drawing.Size(100, 20);
-            this.txtlanthi.TabIndex = 8;
             // 
             // labelControl2
             // 
@@ -244,7 +246,7 @@
             // cmbDiem
             // 
             this.cmbDiem.DataSource = this.vDSPHANMANH2BindingSource;
-            this.cmbDiem.DisplayMember = "TENCN";
+            this.cmbDiem.DisplayMember = "TENKHOA";
             this.cmbDiem.FormattingEnabled = true;
             this.cmbDiem.Location = new System.Drawing.Point(1070, 28);
             this.cmbDiem.Name = "cmbDiem";
@@ -253,34 +255,80 @@
             this.cmbDiem.ValueMember = "TENSERVER";
             this.cmbDiem.SelectedIndexChanged += new System.EventHandler(this.CmbDiem_SelectedIndexChanged);
             // 
-            // qLDSVDataSet1
-            // 
-            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
-            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vDSPHANMANH2BindingSource
             // 
             this.vDSPHANMANH2BindingSource.DataMember = "V_DS_PHANMANH2";
             this.vDSPHANMANH2BindingSource.DataSource = this.qLDSVDataSet1;
             // 
+            // qLDSVDataSet1
+            // 
+            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet1";
+            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // v_DS_PHANMANH2TableAdapter
             // 
             this.v_DS_PHANMANH2TableAdapter.ClearBeforeFill = true;
+            // 
+            // mONHOCBindingSource
+            // 
+            this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.ds1;
+            this.mONHOCBindingSource.Sort = "";
+            // 
+            // ds1
+            // 
+            this.ds1.DataSetName = "DS";
+            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monhocTableAdapter1
+            // 
+            this.monhocTableAdapter1.ClearBeforeFill = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtmonhoc
+            // 
+            this.txtmonhoc.Location = new System.Drawing.Point(601, 33);
+            this.txtmonhoc.MenuManager = this.barManager1;
+            this.txtmonhoc.Name = "txtmonhoc";
+            this.txtmonhoc.Properties.AllowMultiSelect = true;
+            this.txtmonhoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtmonhoc.Properties.DataSource = this.mONHOCBindingSource;
+            this.txtmonhoc.Properties.DisplayMember = "TENMH";
+            this.txtmonhoc.Properties.SelectAllItemVisible = false;
+            this.txtmonhoc.Properties.ValueMember = "MAMH";
+            this.txtmonhoc.Size = new System.Drawing.Size(100, 20);
+            this.txtmonhoc.TabIndex = 7;
+            // 
+            // txtlanthi
+            // 
+            this.txtlanthi.FormattingEnabled = true;
+            this.txtlanthi.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtlanthi.Location = new System.Drawing.Point(850, 28);
+            this.txtlanthi.Name = "txtlanthi";
+            this.txtlanthi.Size = new System.Drawing.Size(121, 21);
+            this.txtlanthi.TabIndex = 25;
             // 
             // DiemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 507);
+            this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.cmbDiem);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.txtlanthi);
-            this.Controls.Add(this.txtmonhoc);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtlop);
             this.Controls.Add(this.tableDiem);
+            this.Controls.Add(this.txtmonhoc);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -293,10 +341,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlanthi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,8 +366,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtlanthi;
-        private DevExpress.XtraEditors.TextEdit txtmonhoc;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtlop;
         private DevExpress.XtraBars.BarButtonItem btnSave;
@@ -327,5 +374,12 @@
         private QLDSVDataSet1 qLDSVDataSet1;
         private System.Windows.Forms.BindingSource vDSPHANMANH2BindingSource;
         private QLDSVDataSet1TableAdapters.V_DS_PHANMANH2TableAdapter v_DS_PHANMANH2TableAdapter;
+        private System.Windows.Forms.BindingSource mONHOCBindingSource;
+        private DS ds1;
+        private DSTableAdapters.MONHOCTableAdapter monhocTableAdapter1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit txtmonhoc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.ComboBox txtlanthi;
     }
 }

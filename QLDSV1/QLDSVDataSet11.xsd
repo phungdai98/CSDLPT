@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_DS_PHANMANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH where TENKHOA not like '%KT%'</CommandText>
+                    <CommandText>SELECT TENKHOA, TENSERVER FROM dbo.V_DS_PHANMANH where TENKHOA not like '%KETOAN%'</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -32,7 +32,7 @@
   <xs:element name="QLDSVDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLDSVDataSet1" msprop:Generator_UserDSName="QLDSVDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DS_PHANMANH2" msprop:Generator_TableClassName="V_DS_PHANMANH2DataTable" msprop:Generator_TableVarName="tableV_DS_PHANMANH2" msprop:Generator_RowChangedName="V_DS_PHANMANH2RowChanged" msprop:Generator_TablePropName="V_DS_PHANMANH2" msprop:Generator_RowDeletingName="V_DS_PHANMANH2RowDeleting" msprop:Generator_RowChangingName="V_DS_PHANMANH2RowChanging" msprop:Generator_RowEvHandlerName="V_DS_PHANMANH2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_DS_PHANMANH2RowDeleted" msprop:Generator_RowClassName="V_DS_PHANMANH2Row" msprop:Generator_UserTableName="V_DS_PHANMANH2" msprop:Generator_RowEvArgName="V_DS_PHANMANH2RowChangeEvent">
+        <xs:element name="V_DS_PHANMANH2" msprop:Generator_TableClassName="V_DS_PHANMANH2DataTable" msprop:Generator_TableVarName="tableV_DS_PHANMANH2" msprop:Generator_TablePropName="V_DS_PHANMANH2" msprop:Generator_RowDeletingName="V_DS_PHANMANH2RowDeleting" msprop:Generator_RowChangingName="V_DS_PHANMANH2RowChanging" msprop:Generator_RowEvHandlerName="V_DS_PHANMANH2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_DS_PHANMANH2RowDeleted" msprop:Generator_UserTableName="V_DS_PHANMANH2" msprop:Generator_RowChangedName="V_DS_PHANMANH2RowChanged" msprop:Generator_RowEvArgName="V_DS_PHANMANH2RowChangeEvent" msprop:Generator_RowClassName="V_DS_PHANMANH2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TENSERVER" msprop:Generator_ColumnVarNameInTable="columnTENSERVER" msprop:Generator_ColumnPropNameInRow="TENSERVER" msprop:Generator_ColumnPropNameInTable="TENSERVERColumn" msprop:Generator_UserColumnName="TENSERVER" minOccurs="0">

@@ -18,6 +18,14 @@ namespace QLDSV1
         {
             return dal.getAllLop();
         }
+        public int CheckMaLop(string malop)
+        {
+            return dal.CheckMaLop(malop);
+        }
+        public int checkDeleteLop(string malop)
+        {
+            return dal.checkDeleteLop(malop);
+        }
         public bool InsertLop(Lop l)
         {
             return dal.InsertLop(l);

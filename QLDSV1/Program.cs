@@ -31,6 +31,9 @@ namespace QLDSV1
         public static int temp = 0;
         public static int demrow = 0;
         public static String maLopSub = "";
+        public static String maMHComboBox = "";
+        public static String rptMalop = "";
+        public static String rptMaMh = "";
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         //public static frmMain frmChinh;
 

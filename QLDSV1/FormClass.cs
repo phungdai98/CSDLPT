@@ -56,12 +56,28 @@ namespace QLDSV1
             txtMaLop.Text = dataGridView1.Rows[0].Cells["MALOP"].Value.ToString();
             txtTenLop.Text = dataGridView1.Rows[0].Cells["TENLOP"].Value.ToString();
             txtMaKhoa.Text = dataGridView1.Rows[0].Cells["MAKH"].Value.ToString();
+            if (lobll.checkDeleteLop(dataGridView1.Rows[0].Cells["MALOP"].Value.ToString()) > 0)
+            {
+                
+                btnXoa.Enabled = false;
+            }
+            else
+            {
+                if(Program.mGroup.Equals("KHOA")) btnXoa.Enabled = false;
+                else btnXoa.Enabled = true;
+            }
             //test
             cmb1.SelectedIndex = -1;
             cmb1.SelectedIndex = Program.temp;
             if(Program.mGroup.Equals("KHOA"))
             {
                 cmb1.Enabled = false;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+                barButtonItem1.Enabled = false;
+                barButtonItem2.Enabled = false;
+                barButtonItem3.Enabled = false;
+                dataGridView1.ReadOnly=true;
             }
             
         }
@@ -107,6 +123,16 @@ namespace QLDSV1
                 temp1 = dataGridView1.Rows[index].Cells["MALOP"].Value.ToString();
                 temp2 = dataGridView1.Rows[index].Cells["TENLOP"].Value.ToString();
                 temp3 = dataGridView1.Rows[index].Cells["MAKH"].Value.ToString();
+                if (lobll.checkDeleteLop(dataGridView1.Rows[index].Cells["MALOP"].Value.ToString()) > 0)
+                {
+
+                    btnXoa.Enabled = false;
+                }
+                else
+                {
+                    if (Program.mGroup.Equals("KHOA")) btnXoa.Enabled = false;
+                    else btnXoa.Enabled = true;
+                }
 
             }
         }
@@ -120,7 +146,12 @@ namespace QLDSV1
 
         private void BarButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (CheckData())
+            if (lobll.CheckMaLop(txtMaLop.Text)> 0)
+            {
+                MessageBox.Show("Mã lớp không hợp lệ");
+                //return 0;
+            }
+            if (CheckData()&& lobll.CheckMaLop(txtMaLop.Text) == 0)
             {
                 Lop l = new Lop();
                 l.MALOP = txtMaLop.Text;
@@ -188,13 +219,21 @@ namespace QLDSV1
             //txtMaLop.Text=temp1;
             //txtTenLop.Text=temp2;
             //txtMaKhoa.Text=temp3;
-            Lop l = st.Pop();
-            if (lobll.InsertLop(l))
+            if(st.Count>0)
             {
-                ShowAllLop();
-                //MessageBox.Show("Phục hồi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Lop l = st.Pop();
+                if (lobll.InsertLop(l))
+                {
+                    ShowAllLop();
+                    //MessageBox.Show("Phục hồi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
             }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu nào được xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
 }

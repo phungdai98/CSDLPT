@@ -170,6 +170,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 329);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // formdangnhap
             // 
