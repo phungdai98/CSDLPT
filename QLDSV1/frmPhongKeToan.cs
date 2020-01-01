@@ -59,5 +59,18 @@ namespace QLDSV1
 
             }
         }
+
+        private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmTaoLogin));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmTaoLogin f = new frmTaoLogin();
+                f.MdiParent = this;
+                f.Show();
+
+            }
+        }
     }
 }

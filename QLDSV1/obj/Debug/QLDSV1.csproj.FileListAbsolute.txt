@@ -561,3 +561,4 @@ G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmInPhieuDiem.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.XtraReportInPhieuDiem.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmInHocPhi.resources
 G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.XtraReportInHocPhi.resources
+G:\CSDLPT-GIT\CSDLPT\QLDSV1\obj\Debug\QLDSV1.frmTaoLogin.resources
