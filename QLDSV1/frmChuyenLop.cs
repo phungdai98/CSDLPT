@@ -278,7 +278,7 @@ namespace QLDSV1
                 
                 if (Program.myReader.Read())
                 {
-                    string lenh = "INSERT INTO LINK0.QLDSV.dbo.SINHVIEN(MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, NGHIHOC, GHICHU) VALUES(N'" + masv_moi + "',N'" + Program.myReader.GetString(1) + "',N'" + Program.myReader.GetString(2) + "',N'" + malop_chuyen + "','" + Program.myReader.GetBoolean(4) + "'," + Program.myReader.GetDateTime(5).ToString().Split(' ')[0] + ",N'" + Program.myReader.GetString(6) + "',N'" + Program.myReader.GetString(7) + "','" + Program.myReader.GetBoolean(8) + "',N'Mã SV cũ " + masv +" chuyển từ lớp " + malop_bandau+"')";
+                    string lenh = "INSERT INTO SINHVIEN(MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, NGHIHOC, GHICHU) VALUES(N'" + masv_moi + "',N'" + Program.myReader.GetString(1) + "',N'" + Program.myReader.GetString(2) + "',N'" + malop_chuyen + "','" + Program.myReader.GetBoolean(4) + "'," + Program.myReader.GetDateTime(5).ToString().Split(' ')[0] + ",N'" + Program.myReader.GetString(6) + "',N'" + Program.myReader.GetString(7) + "','" + Program.myReader.GetBoolean(8) + "',N'Mã SV cũ " + masv +" chuyển từ lớp " + malop_bandau+"')";
                     Program.myReader.Close();
                     //MessageBox.Show(lenh);
                     SqlCommand sqlcom = new SqlCommand(lenh, Program.conn);
@@ -357,7 +357,7 @@ namespace QLDSV1
                 //    }
                 //}
 
-                string lenh1 = "exec SETNGHIHOC @x='"+masv+"',@GHICHU=N'Chuyển sang lớp " + malop_chuyen+" với mã "+ masv_moi + "'";
+                string lenh1 = "exec SETNGHIHOC @X='"+masv+"',@GHICHU=N'Chuyển sang lớp " + malop_chuyen+" với mã "+ masv_moi + "'";
                 //MessageBox.Show(lenh1);
                 SqlCommand sqlcom1 = new SqlCommand(lenh1, Program.conn);
                 try
