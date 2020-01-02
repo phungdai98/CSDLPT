@@ -117,8 +117,9 @@
             this.xrPivotGrid1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.xrPivotGrid1.Appearance.Lines.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.xrPivotGrid1.Appearance.TotalCell.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.xrPivotGrid1.DataAdapter = this.sP_BANGDIEMTONGKETTableAdapter;
             this.xrPivotGrid1.DataMember = "SP_BANGDIEMTONGKET";
-            this.xrPivotGrid1.DataSource = this.sqlDataSource4;
+            this.xrPivotGrid1.DataSource = this.ds1;
             this.xrPivotGrid1.Fields.AddRange(new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField[] {
             this.fieldMASV1,
             this.fieldHOVATEN1,
