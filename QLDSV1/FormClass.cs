@@ -235,5 +235,11 @@ namespace QLDSV1
             }
             
         }
+
+        private void BarButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtMaLop.Text = temp1;
+            txtTenLop.Text = temp2;
+        }
     }
 }

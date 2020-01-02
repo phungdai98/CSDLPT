@@ -54,6 +54,10 @@ namespace QLDSV1
 
         private void DiemSinhVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ds1.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            ds1.EnforceConstraints = false;
+            this.lOPTableAdapter.Fill(this.ds1.LOP);
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DS_PHANMANH2' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANH2TableAdapter.Fill(this.qLDSVDataSet1.V_DS_PHANMANH2);
             btnSave.Enabled = false;
@@ -84,6 +88,7 @@ namespace QLDSV1
 
         private void BarButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DataConnection dc = new DataConnection();
             SqlConnection con = dc.getConnect();
             con.Open();
             SqlTransaction t = con.BeginTransaction();
@@ -138,7 +143,7 @@ namespace QLDSV1
                             
                             //dsv.LANTHI = int.Parse(txtlanthi.Text);
    
-                            //dal.InsertDiem(dsv);
+                            //dal.InsertDiem(dsv,con,t);
 
                             //dsv.LANTHI = int.Parse(txtlanthi.Text)-1;
                             //dsv.DIEM = "0";
@@ -266,6 +271,10 @@ namespace QLDSV1
                         Program.password = Program.passwordDN;
                         DataConnection dc = new DataConnection();
                         dal = new DiemSinhVienDAL();
+                        
+                        this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                 
+                        this.lOPTableAdapter.Fill(this.ds1.LOP);
                     }
                     else
                     {
@@ -273,7 +282,11 @@ namespace QLDSV1
                         Program.password = Program.remotepassword;
                         DataConnection dc = new DataConnection();
                         //MessageBox.Show(Program.servername);
+                        
                         dal = new DiemSinhVienDAL();
+                        this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+
+                        this.lOPTableAdapter.Fill(this.ds1.LOP);
                     }
                        
                 }

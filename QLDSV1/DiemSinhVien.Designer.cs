@@ -43,7 +43,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.tableDiem = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtlop = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -58,15 +57,18 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtmonhoc = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.txtlanthi = new System.Windows.Forms.ComboBox();
+            this.txtlop = new System.Windows.Forms.ComboBox();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTableAdapter = new QLDSV1.DSTableAdapters.LOPTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -199,14 +201,6 @@
             this.gridView1.GridControl = this.tableDiem;
             this.gridView1.Name = "gridView1";
             // 
-            // txtlop
-            // 
-            this.txtlop.Location = new System.Drawing.Point(327, 33);
-            this.txtlop.MenuManager = this.barManager1;
-            this.txtlop.Name = "txtlop";
-            this.txtlop.Size = new System.Drawing.Size(100, 20);
-            this.txtlop.TabIndex = 5;
-            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(264, 36);
@@ -315,18 +309,38 @@
             this.txtlanthi.Size = new System.Drawing.Size(121, 21);
             this.txtlanthi.TabIndex = 25;
             // 
+            // txtlop
+            // 
+            this.txtlop.DataSource = this.lOPBindingSource;
+            this.txtlop.DisplayMember = "MALOP";
+            this.txtlop.FormattingEnabled = true;
+            this.txtlop.Location = new System.Drawing.Point(318, 29);
+            this.txtlop.Name = "txtlop";
+            this.txtlop.Size = new System.Drawing.Size(121, 21);
+            this.txtlop.TabIndex = 30;
+            this.txtlop.ValueMember = "MALOP";
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.ds1;
+            // 
+            // lOPTableAdapter
+            // 
+            this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
             // DiemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 507);
+            this.Controls.Add(this.txtlop);
             this.Controls.Add(this.txtlanthi);
             this.Controls.Add(this.cmbDiem);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtlop);
             this.Controls.Add(this.tableDiem);
             this.Controls.Add(this.txtmonhoc);
             this.Controls.Add(this.barDockControlLeft);
@@ -340,12 +354,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPHANMANH2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmonhoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,7 +381,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtlop;
         private DevExpress.XtraBars.BarButtonItem btnSave;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.ComboBox cmbDiem;
@@ -381,5 +394,8 @@
         private DevExpress.XtraEditors.CheckedComboBoxEdit txtmonhoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private System.Windows.Forms.ComboBox txtlanthi;
+        private System.Windows.Forms.ComboBox txtlop;
+        private System.Windows.Forms.BindingSource lOPBindingSource;
+        private DSTableAdapters.LOPTableAdapter lOPTableAdapter;
     }
 }
