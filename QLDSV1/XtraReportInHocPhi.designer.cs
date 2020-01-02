@@ -34,6 +34,7 @@
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportInHocPhi));
+            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -71,6 +72,8 @@
             this.label3 = new DevExpress.XtraReports.UI.XRLabel();
             this.ds1 = new QLDSV1.DS();
             this.sP_INHOCPHILOPTableAdapter1 = new QLDSV1.DSTableAdapters.SP_INHOCPHILOPTableAdapter();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
@@ -376,17 +379,19 @@
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.panel1});
-            this.ReportFooter.HeightF = 49.38444F;
+            this.ReportFooter.HeightF = 91.0511F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // panel1
             // 
             this.panel1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel1,
+            this.xrLabel2,
             this.label2,
             this.label3});
             this.panel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.panel1.Name = "panel1";
-            this.panel1.SizeF = new System.Drawing.SizeF(650F, 49.38444F);
+            this.panel1.SizeF = new System.Drawing.SizeF(650F, 91.0511F);
             this.panel1.StyleName = "GrandTotalBackground1";
             // 
             // label2
@@ -409,8 +414,8 @@
             this.label3.SizeF = new System.Drawing.SizeF(168.2915F, 14.88444F);
             this.label3.StyleName = "GrandTotalData1";
             this.label3.StylePriority.UseTextAlignment = false;
-            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.label3.Summary = xrSummary1;
+            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.label3.Summary = xrSummary2;
             this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.label3.WordWrap = false;
             // 
@@ -422,6 +427,31 @@
             // sP_INHOCPHILOPTableAdapter1
             // 
             this.sP_INHOCPHILOPTableAdapter1.ClearBeforeFill = true;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(331F, 51.08337F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(143.4203F, 14.88444F);
+            this.xrLabel1.StyleName = "GrandTotalCaption1";
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Tổng số sinh viên :";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.CanGrow = false;
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([HOTEN])")});
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(481.7085F, 51.08337F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(168.2915F, 14.88444F);
+            this.xrLabel2.StyleName = "GrandTotalData1";
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrLabel2.Summary = xrSummary1;
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel2.WordWrap = false;
             // 
             // XtraReportInHocPhi
             // 
@@ -495,5 +525,7 @@
         public DevExpress.XtraReports.UI.XRLabel xrLabelNienKhoa;
         public DevExpress.XtraReports.UI.XRLabel xrLabelLop;
         private DSTableAdapters.SP_INHOCPHILOPTableAdapter sP_INHOCPHILOPTableAdapter1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
     }
 }

@@ -45,24 +45,28 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
-            this.sqlDataSource4 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.sP_BANGDIEMTONGKETTableAdapter = new QLDSV1.DSTableAdapters.SP_BANGDIEMTONGKETTableAdapter();
+            this.ds1 = new QLDSV1.DS();
             this.fieldMASV1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldHOVATEN1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldDIEM1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.sqlDataSource4 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.sqlDataSource3 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.ds1 = new QLDSV1.DS();
             this.dIEMTableAdapter = new QLDSV1.DSTableAdapters.DIEMTableAdapter();
-            this.sP_BANGDIEMTONGKETTableAdapter = new QLDSV1.DSTableAdapters.SP_BANGDIEMTONGKETTableAdapter();
             this.fieldTENMH1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrNL = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrNL,
+            this.xrLabel3,
             this.xrLabel2});
             this.TopMargin.Name = "TopMargin";
             // 
@@ -130,19 +134,14 @@
             this.xrPivotGrid1.OptionsPrint.PrintFilterHeaders = DevExpress.Utils.DefaultBoolean.False;
             this.xrPivotGrid1.SizeF = new System.Drawing.SizeF(650F, 82.2917F);
             // 
-            // sqlDataSource4
+            // sP_BANGDIEMTONGKETTableAdapter
             // 
-            this.sqlDataSource4.ConnectionName = "QLDSV1.Properties.Settings.QLDSVConnectionString1";
-            this.sqlDataSource4.Name = "sqlDataSource4";
-            storedProcQuery1.Name = "SP_BANGDIEMTONGKET";
-            queryParameter1.Name = "@MALOP";
-            queryParameter1.Type = typeof(string);
-            queryParameter1.ValueInfo = "D16CQCN1";
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "SP_BANGDIEMTONGKET";
-            this.sqlDataSource4.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource4.ResultSchemaSerializable = resources.GetString("sqlDataSource4.ResultSchemaSerializable");
+            this.sP_BANGDIEMTONGKETTableAdapter.ClearBeforeFill = true;
+            // 
+            // ds1
+            // 
+            this.ds1.DataSetName = "DS";
+            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fieldMASV1
             // 
@@ -175,6 +174,20 @@
             this.fieldDIEM1.Caption = "DIEM";
             this.fieldDIEM1.FieldName = "DIEM";
             this.fieldDIEM1.Name = "fieldDIEM1";
+            // 
+            // sqlDataSource4
+            // 
+            this.sqlDataSource4.ConnectionName = "QLDSV1.Properties.Settings.QLDSVConnectionString1";
+            this.sqlDataSource4.Name = "sqlDataSource4";
+            storedProcQuery1.Name = "SP_BANGDIEMTONGKET";
+            queryParameter1.Name = "@MALOP";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "D16CQCN1";
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "SP_BANGDIEMTONGKET";
+            this.sqlDataSource4.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource4.ResultSchemaSerializable = resources.GetString("sqlDataSource4.ResultSchemaSerializable");
             // 
             // sqlDataSource1
             // 
@@ -218,18 +231,9 @@
             storedProcQuery4});
             this.sqlDataSource3.ResultSchemaSerializable = resources.GetString("sqlDataSource3.ResultSchemaSerializable");
             // 
-            // ds1
-            // 
-            this.ds1.DataSetName = "DS";
-            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dIEMTableAdapter
             // 
             this.dIEMTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_BANGDIEMTONGKETTableAdapter
-            // 
-            this.sP_BANGDIEMTONGKETTableAdapter.ClearBeforeFill = true;
             // 
             // fieldTENMH1
             // 
@@ -238,6 +242,23 @@
             this.fieldTENMH1.Caption = "TENMH";
             this.fieldTENMH1.FieldName = "TENMH";
             this.fieldTENMH1.Name = "fieldTENMH1";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(57.29167F, 67.00001F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "Người lập";
+            // 
+            // xrNL
+            // 
+            this.xrNL.LocationFloat = new DevExpress.Utils.PointFloat(216.6667F, 67.00001F);
+            this.xrNL.Multiline = true;
+            this.xrNL.Name = "xrNL";
+            this.xrNL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrNL.SizeF = new System.Drawing.SizeF(247.9167F, 23F);
             // 
             // rptBangDiemTK
             // 
@@ -280,5 +301,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         public DevExpress.XtraReports.UI.XRLabel xrLop;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        public DevExpress.XtraReports.UI.XRLabel xrNL;
     }
 }

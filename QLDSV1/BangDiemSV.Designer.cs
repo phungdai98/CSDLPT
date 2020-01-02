@@ -70,6 +70,8 @@
             this.ds3 = new QLDSV1.DS();
             this.ds4 = new QLDSV1.DS();
             this.sP_BANGDIEMTableAdapter1 = new QLDSV1.DSTableAdapters.SP_BANGDIEMTableAdapter();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrNL = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
@@ -184,6 +186,8 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrNL,
+            this.xrLabel4,
             this.xrlan,
             this.xrLabel3,
             this.xrMh,
@@ -196,7 +200,7 @@
             // 
             // xrlan
             // 
-            this.xrlan.LocationFloat = new DevExpress.Utils.PointFloat(321.375F, 85.33331F);
+            this.xrlan.LocationFloat = new DevExpress.Utils.PointFloat(87.00002F, 85.33331F);
             this.xrlan.Multiline = true;
             this.xrlan.Name = "xrlan";
             this.xrlan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -204,7 +208,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(233.3333F, 85.33331F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 85.33331F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -230,7 +234,7 @@
             // 
             // xrLop
             // 
-            this.xrLop.LocationFloat = new DevExpress.Utils.PointFloat(71.875F, 41.62499F);
+            this.xrLop.LocationFloat = new DevExpress.Utils.PointFloat(87.00002F, 41.62499F);
             this.xrLop.Multiline = true;
             this.xrLop.Name = "xrLop";
             this.xrLop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -394,6 +398,23 @@
             // 
             this.sP_BANGDIEMTableAdapter1.ClearBeforeFill = true;
             // 
+            // xrLabel4
+            // 
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(337F, 85.33328F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(72.91666F, 23F);
+            this.xrLabel4.Text = "Người lập";
+            // 
+            // xrNL
+            // 
+            this.xrNL.LocationFloat = new DevExpress.Utils.PointFloat(432.2917F, 85.33328F);
+            this.xrNL.Multiline = true;
+            this.xrNL.Name = "xrNL";
+            this.xrNL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrNL.SizeF = new System.Drawing.SizeF(182.5417F, 23F);
+            // 
             // BangDiemSV
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -468,5 +489,7 @@
         public DevExpress.XtraReports.UI.XRLabel xrlan;
         public DevExpress.XtraReports.UI.XRLabel xrMh;
         public DevExpress.XtraReports.UI.XRLabel xrLop;
+        public DevExpress.XtraReports.UI.XRLabel xrNL;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
     }
 }

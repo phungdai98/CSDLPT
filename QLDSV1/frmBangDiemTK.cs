@@ -96,6 +96,7 @@ namespace QLDSV1
         {
             rptBangDiemTK rpt = new rptBangDiemTK(malop);
             rpt.xrLop.Text = cmbLop.Text;
+            rpt.xrNL.Text = Program.mHoten;
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
         }

@@ -52,6 +52,7 @@ namespace QLDSV1
             rpt.xrLop.Text = cmbTenLop.Text;
             rpt.xrMh.Text = cmbMonHoc.Text;
             rpt.xrlan.Text = txtLan.Text;
+            rpt.xrNL.Text = Program.mHoten;
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
 
